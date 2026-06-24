@@ -806,8 +806,8 @@ button:hover{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-top:10px;
-  font-size:13px;
+  margin-top:8px;
+  font-size:5px;
 }
 
 .remember{
