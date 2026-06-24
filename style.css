@@ -679,6 +679,11 @@ input{font-family:inherit;}
 }
 .login-left{
   padding:40px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  justify-content:center;
 }
 
 .kejaksaan-logo{
@@ -690,11 +695,13 @@ input{font-family:inherit;}
   font-size:28px;
   color:#0B3D2E;
   margin-bottom:10px;
+  text-align:center;
 }
 
 .sub{
   color:#5B6660;
   margin-bottom:20px;
+  text-align:center;
 }
 
 .security-note{
@@ -703,6 +710,7 @@ input{font-family:inherit;}
   max-width:320px;
   border-left:3px solid #B8902E;
   padding-left:12px;
+  text-align:left;
 }
 .login-right{
   display:flex;
@@ -902,11 +910,11 @@ button:hover{
   50%{transform:translateY(-25px);}
   100%{transform:translateY(0);}
 }
-  .logo-wrapper{
+.logo-wrapper{
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
 .kejaksaan-logo{
