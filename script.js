@@ -48,3 +48,21 @@ if (dateChip) {
   const now = new Date();
   dateChip.textContent = now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 }
+loginForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const btn = loginForm.querySelector('.btn-primary span');
+  const btnParent = loginForm.querySelector('.btn-primary');
+
+  btn.textContent = 'Memverifikasi identitas...';
+  btnParent.style.opacity = "0.85";
+
+  setTimeout(() => {
+    btn.textContent = 'Autentikasi berhasil';
+    btnParent.style.background = "#155A41";
+
+    setTimeout(() => {
+      window.location.href = 'dashboard.html';
+    }, 600);
+  }, 1200);
+});
