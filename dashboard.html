@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGAP INTEL — Dasbor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-body">
+
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+      <div class="sidebar-brand">
+        <svg viewBox="0 0 120 120" class="emblem-svg-sm" aria-hidden="true">
+          <circle cx="60" cy="60" r="56" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          <path d="M60 22 L84 36 V64 C84 84 60 98 60 98 C60 98 36 84 36 64 V36 Z" fill="var(--white)"/>
+          <path d="M60 32 L76 41 V63 C76 78 60 88 60 88 C60 88 44 78 44 63 V41 Z" fill="var(--green-deep)"/>
+          <circle cx="60" cy="58" r="9" fill="var(--gold)"/>
+        </svg>
+        <div>
+          <p class="sidebar-title">SIGAP INTEL</p>
+          <p class="sidebar-sub">Kejari Muna</p>
+        </div>
+      </div>
+
+      <p class="sidebar-section-label">Menu Utama</p>
+      <ul class="nav-list">
+        <li class="nav-item active" data-target="kinerja">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span>Capaian Kinerja Intelijen</span>
+        </li>
+        <li class="nav-item" data-target="aplikasi">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.2" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span>Aplikasi Intelijen</span>
+        </li>
+        <li class="nav-item" data-target="pusatdata">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" stroke-width="1.6"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6" stroke="currentColor" stroke-width="1.6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span>Pusat Data Intelijen</span>
+        </li>
+        <li class="nav-item" data-target="laporan">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12h6M9 16h6M9 8h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span>Laporan Otomatis</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="status-pill"><span class="dot"></span> Sistem Aman</div>
+        <a href="index.html" class="logout-link">Keluar</a>
+      </div>
+    </nav>
+
+    <!-- MAIN -->
+    <div class="main-area">
+      <header class="topbar">
+        <button class="burger" id="burger" aria-label="Buka menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <div class="topbar-title">
+          <span class="eyebrow-sm">Dasbor Intelijen</span>
+          <h1 id="pageTitle">Capaian Kinerja Intelijen</h1>
+        </div>
+        <div class="topbar-right">
+          <span class="date-chip" id="dateChip"></span>
+          <div class="avatar">WY</div>
+        </div>
+      </header>
+
+      <main class="content">
+
+        <!-- PAGE 1: CAPAIAN KINERJA -->
+        <section class="page active" id="kinerja">
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <span class="kpi-label">Operasi Selesai</span>
+              <span class="kpi-value">38</span>
+              <span class="kpi-delta up">+12% bulan ini</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Laporan Diterbitkan</span>
+              <span class="kpi-value">152</span>
+              <span class="kpi-delta up">+8% bulan ini</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Sasaran Termonitor</span>
+              <span class="kpi-value">214</span>
+              <span class="kpi-delta">stabil</span>
+            </div>
+            <div class="kpi-card accent">
+              <span class="kpi-label">Tingkat Akurasi Analisa</span>
+              <span class="kpi-value">96,4%</span>
+              <span class="kpi-delta up">+1,2%</span>
+            </div>
+          </div>
+
+          <div class="panel-grid">
+            <div class="panel wide">
+              <div class="panel-head">
+                <h3>Tren Kinerja Triwulanan</h3>
+                <span class="panel-tag">2026</span>
+              </div>
+              <div class="bar-chart" aria-hidden="true">
+                <div class="bar" style="--h:42%"><span>Q1</span></div>
+                <div class="bar" style="--h:58%"><span>Q2</span></div>
+                <div class="bar gold" style="--h:81%"><span>Q3</span></div>
+                <div class="bar" style="--h:67%"><span>Q4*</span></div>
+              </div>
+              <p class="panel-foot">*Proyeksi berdasarkan capaian berjalan</p>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Status Operasi</h3></div>
+              <ul class="status-list">
+                <li><span class="sw green"></span>Selesai <b>38</b></li>
+                <li><span class="sw gold"></span>Berjalan <b>11</b></li>
+                <li><span class="sw outline"></span>Direncanakan <b>6</b></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 2: APLIKASI INTELIJEN -->
+        <section class="page" id="aplikasi">
+          <p class="section-intro">Kumpulan modul kerja operasional untuk penyusunan dokumen dan pelaksanaan tugas intelijen.</p>
+          <div class="app-grid">
+            <div class="app-card">
+              <span class="app-tag">IN.4</span>
+              <h4>Analisa Sasaran</h4>
+              <p>Penyusunan profil dan analisa terhadap sasaran operasi intelijen.</p>
+            </div>
+            <div class="app-card">
+              <span class="app-tag">IN.5</span>
+              <h4>Analisa Tugas</h4>
+              <p>Perumusan rencana tugas dan langkah pelaksanaan operasi.</p>
+            </div>
+            <div class="app-card">
+              <span class="app-tag">IN.7</span>
+              <h4>Rencana Penyelidikan</h4>
+              <p>Penyusunan rencana penyelidikan berbasis dasar hukum terkait.</p>
+            </div>
+            <div class="app-card">
+              <span class="app-tag">L.IN.1</span>
+              <h4>Laporan Harian</h4>
+              <p>Pencatatan dan pelaporan kegiatan intelijen harian (Lapinhar).</p>
+            </div>
+            <div class="app-card">
+              <span class="app-tag">SURAT</span>
+              <h4>Korespondensi Resmi</h4>
+              <p>Pembuatan surat dinas dan nota dinas kebidangan intelijen.</p>
+            </div>
+            <div class="app-card outline">
+              <span class="app-tag">+</span>
+              <h4>Tambah Modul</h4>
+              <p>Ajukan kebutuhan modul kerja baru ke admin sistem.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 3: PUSAT DATA -->
+        <section class="page" id="pusatdata">
+          <div class="search-row">
+            <input type="text" placeholder="Cari berkas, sasaran, atau nomor dokumen…" class="search-input">
+            <button class="btn-secondary">Cari</button>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>No. Dokumen</th><th>Jenis</th><th>Sasaran / Subjek</th><th>Status</th><th>Tanggal</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>IN.4/014/VI/2026</td><td>Analisa Sasaran</td><td>Operasi DPO Pasal 411</td><td><span class="tag green">Aktif</span></td><td>18 Jun 2026</td></tr>
+                <tr><td>L.IN.1/233/VI/2026</td><td>Lapinhar</td><td>Demonstrasi LSM Perisai</td><td><span class="tag gold">Tinjau</span></td><td>15 Jun 2026</td></tr>
+                <tr><td>IN.7/009/V/2026</td><td>Rencana Penyelidikan</td><td>Konten Anti-Pancasila</td><td><span class="tag green">Aktif</span></td><td>28 Mei 2026</td></tr>
+                <tr><td>IN.5/041/V/2026</td><td>Analisa Tugas</td><td>Operasi DPO Pasal 411</td><td><span class="tag muted">Selesai</span></td><td>20 Mei 2026</td></tr>
+                <tr><td>ASET/077/V/2026</td><td>Status Lahan</td><td>Koperasi Muna Barat</td><td><span class="tag muted">Selesai</span></td><td>11 Mei 2026</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- PAGE 4: LAPORAN OTOMATIS -->
+        <section class="page" id="laporan">
+          <p class="section-intro">Hasilkan laporan terstruktur secara otomatis berdasarkan data operasi dan jadwal yang ditentukan.</p>
+          <div class="report-grid">
+            <div class="report-card">
+              <div class="report-head"><h4>Laporan Harian Intelijen</h4><span class="tag green">Terjadwal</span></div>
+              <p>Dihasilkan otomatis setiap pukul 17.00 WITA dari log kegiatan harian.</p>
+              <button class="btn-outline">Buat Sekarang</button>
+            </div>
+            <div class="report-card">
+              <div class="report-head"><h4>Rekap Mingguan Operasi</h4><span class="tag gold">Setiap Senin</span></div>
+              <p>Ringkasan capaian dan status seluruh operasi berjalan minggu lalu.</p>
+              <button class="btn-outline">Buat Sekarang</button>
+            </div>
+            <div class="report-card">
+              <div class="report-head"><h4>Laporan Bulanan Kinerja</h4><span class="tag muted">Akhir Bulan</span></div>
+              <p>Kompilasi capaian kinerja bidang intelijen untuk pimpinan satuan kerja.</p>
+              <button class="btn-outline">Buat Sekarang</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
