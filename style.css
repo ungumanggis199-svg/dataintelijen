@@ -28,6 +28,11 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
 input{font-family:inherit;}
 
 /* ===== LOGIN PAGE ===== */
+.logo-kejaksaan{
+  width:60px;
+  height:auto;
+  display:block;
+}
 .login-body{
   min-height:100vh;
   display:flex;
