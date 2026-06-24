@@ -778,3 +778,53 @@ button:hover{
     transform:translateY(0);
   }
 }
+.password-wrapper{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.password-wrapper input{
+  width:100%;
+  padding-right:40px;
+}
+
+.toggle-password{
+  position:absolute;
+  right:12px;
+  cursor:pointer;
+  font-size:16px;
+  color:#5B6660;
+  user-select:none;
+  transition:0.2s;
+}
+
+.toggle-password:hover{
+  color:#0B3D2E;
+}
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:8px;
+  font-size:13px;
+}
+
+.remember{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.remember input{
+  accent-color:#0B3D2E;
+}
+
+.link-muted{
+  color:#5B6660;
+  text-decoration:none;
+}
+
+.link-muted:hover{
+  color:#0B3D2E;
+}
