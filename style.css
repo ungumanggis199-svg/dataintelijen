@@ -828,3 +828,27 @@ button:hover{
 .link-muted:hover{
   color:#0B3D2E;
 }
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  margin-top:10px;
+}
+
+.remember{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+}
+
+.remember span,
+.remember label{
+  white-space:nowrap;
+}
+
+.remember input{
+  width:14px;
+  height:14px;
+  accent-color:#0B3D2E;
