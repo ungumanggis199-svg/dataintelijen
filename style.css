@@ -852,3 +852,65 @@ button:hover{
   width:14px;
   height:14px;
   accent-color:#0B3D2E;
+.login-bg{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(120deg,#ffffff,#f7f7f4,#ffffff);
+  background-size:200% 200%;
+  animation:bgMove 10s ease infinite;
+  overflow:hidden;
+  z-index:0;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* soft dynamic glow */
+.orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(70px);
+  opacity:0.22;
+  animation:float 12s ease-in-out infinite;
+}
+
+.o1{
+  width:320px;height:320px;
+  background:#0B3D2E;
+  top:10%;left:10%;
+}
+
+.o2{
+  width:420px;height:420px;
+  background:#B8902E;
+  bottom:10%;right:12%;
+  animation-delay:2s;
+}
+
+.o3{
+  width:260px;height:260px;
+  background:#0B3D2E;
+  top:55%;left:55%;
+  animation-delay:4s;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-25px);}
+  100%{transform:translateY(0);}
+}
+  .logo-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.kejaksaan-logo{
+  width:110px;
+  display:block;
+  margin:0 auto;
+}
