@@ -805,7 +805,7 @@ button:hover{
 .row{
   display:flex;
   justify-content:space-between;
-  align-items:left;
+  align-items:center;
   margin-top:8px;
   font-size:15px;
 }
