@@ -627,3 +627,154 @@ input{font-family:inherit;}
   font-size:10.5px;
   color:rgba(255,255,255,0.7);
 }
+.login-bg{
+  position:fixed;
+  inset:0;
+  background:#ffffff;
+  overflow:hidden;
+  z-index:0;
+}
+
+.orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(60px);
+  opacity:0.25;
+  animation:float 10s infinite ease-in-out;
+}
+
+.o1{
+  width:300px;height:300px;
+  background:#0B3D2E;
+  top:10%;left:15%;
+}
+
+.o2{
+  width:400px;height:400px;
+  background:#B8902E;
+  bottom:10%;right:15%;
+  animation-delay:2s;
+}
+
+.o3{
+  width:250px;height:250px;
+  background:#0B3D2E;
+  top:60%;left:60%;
+  animation-delay:4s;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+  100%{transform:translateY(0);}
+}
+.login-container{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:100vh;
+  align-items:center;
+  padding:60px;
+}
+.login-left{
+  padding:40px;
+}
+
+.kejaksaan-logo{
+  width:90px;
+  margin-bottom:20px;
+}
+
+.login-left h1{
+  font-size:28px;
+  color:#0B3D2E;
+  margin-bottom:10px;
+}
+
+.sub{
+  color:#5B6660;
+  margin-bottom:20px;
+}
+
+.security-note{
+  font-size:13px;
+  color:#5B6660;
+  max-width:320px;
+  border-left:3px solid #B8902E;
+  padding-left:12px;
+}
+.login-right{
+  display:flex;
+  justify-content:center;
+}
+
+.glass-card{
+  width:100%;
+  max-width:420px;
+  padding:40px;
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(20px);
+
+  border:1px solid rgba(11,61,46,0.1);
+  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+}
+.glass-card h2{
+  color:#0B3D2E;
+  margin-bottom:6px;
+}
+
+.desc{
+  color:#5B6660;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  margin-bottom:14px;
+  border-radius:10px;
+  border:1px solid #E7E3D8;
+  transition:0.2s;
+}
+
+input:focus{
+  outline:none;
+  border-color:#B8902E;
+  box-shadow:0 0 0 3px rgba(184,144,46,0.15);
+}
+button{
+  width:100%;
+  padding:12px;
+  background:#0B3D2E;
+  color:white;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+button:hover{
+  background:#155A41;
+  transform:translateY(-2px);
+}
+.glass-card{
+  animation:fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
