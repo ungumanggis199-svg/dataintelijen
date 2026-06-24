@@ -805,9 +805,9 @@ button:hover{
 .row{
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  align-items:left;
   margin-top:8px;
-  font-size:5px;
+  font-size:15px;
 }
 
 .remember{
