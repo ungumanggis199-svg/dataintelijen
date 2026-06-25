@@ -823,3 +823,120 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
   0%{ left:-60%; }
   100%{ left:120%; }
 }
+/* =========================
+   BACKGROUND GEDUNG (MAIN)
+   ========================= */
+
+body{
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* IMAGE BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background-image:url("ChatGPT Image Jun 25, 2026, 04_09_44 PM(1).png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  filter:brightness(0.9) contrast(1.05) saturate(1.1);
+  transform:scale(1.05);
+
+  animation:slowZoom 18s ease-in-out infinite alternate;
+  z-index:-3;
+}
+
+/* OVERLAY GELAP + GREEN TINT */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(11,61,46,0.35), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(184,144,46,0.18), transparent 50%),
+    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
+
+  z-index:-2;
+}
+
+/* ANIMASI GERAK HALUS (REALISTIC DEPTH) */
+@keyframes slowZoom{
+  0%{
+    transform:scale(1.05) translateY(0px);
+  }
+  100%{
+    transform:scale(1.12) translateY(-8px);
+  }
+}
+/* =========================
+   GLASS EFFECT UPGRADE
+   ========================= */
+
+.sidebar,
+.panel,
+.kpi-card,
+.hero-banner,
+.topbar{
+  background:rgba(255,255,255,0.78);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.4);
+}
+
+/* shadow lebih soft & premium */
+.panel,
+.kpi-card{
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+/* =========================
+   FLOATING LIGHT EFFECT
+   ========================= */
+
+body{
+  position:relative;
+}
+
+body .light{
+  position:fixed;
+  width:8px;
+  height:8px;
+  background:rgba(255,255,255,0.6);
+  border-radius:50%;
+  box-shadow:0 0 20px rgba(255,255,255,0.5);
+  animation:floatUp 12s linear infinite;
+  z-index:-1;
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(100vh) translateX(0);
+    opacity:0;
+  }
+  20%{opacity:1;}
+  100%{
+    transform:translateY(-20vh) translateX(40px);
+    opacity:0;
+  }
+}
+// =========================
+// FLOATING LIGHT GENERATOR
+// =========================
+function createLights(){
+  for(let i=0;i<18;i++){
+    const l = document.createElement("div");
+    l.className = "light";
+
+    l.style.left = Math.random()*100 + "vw";
+    l.style.animationDuration = (8 + Math.random()*10) + "s";
+    l.style.opacity = Math.random();
+
+    document.body.appendChild(l);
+  }
+}
+
+createLights();
