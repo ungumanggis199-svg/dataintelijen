@@ -924,3 +924,96 @@ body .light{
   }
 }
 createLights();
+body{
+  margin:0;
+  font-family:Inter;
+  background:#f6f8f7;
+  overflow-x:hidden;
+}
+
+/* GEDUNG BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("ChatGPT Image Jun 25, 2026, 04_09_44 PM(2).png");
+  background-size:cover;
+  background-position:center;
+  filter:brightness(0.85) contrast(1.1) saturate(1.1);
+  transform:scale(1.05);
+  z-index:-3;
+  animation:zoomSlow 20s ease-in-out infinite alternate;
+}
+
+/* DARK + GREEN OVERLAY */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(11,61,46,0.35), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(184,144,46,0.2), transparent 45%),
+    linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(0,0,0,0.65));
+  z-index:-2;
+}
+
+/* ANIMASI SLOW CINEMATIC */
+@keyframes zoomSlow{
+  from{transform:scale(1.05);}
+  to{transform:scale(1.12);}
+}
+.panel,
+.kpi-card,
+.hero-banner{
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.4);
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* hover efek premium */
+.kpi-card:hover{
+  transform:translateY(-5px);
+  transition:0.3s ease;
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+.hero-banner{
+  padding:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.hero-banner h1{
+  font-size:32px;
+  color:#0B3D2E;
+  margin:0;
+}
+
+.hero-banner .hb-sub{
+  opacity:0.7;
+  margin-top:5px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.panel-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:16px;
+}
+.decoration{
+  position:fixed;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle, rgba(11,61,46,0.15), transparent 70%);
+  top:-100px;
+  left:-100px;
+  z-index:-1;
+}
