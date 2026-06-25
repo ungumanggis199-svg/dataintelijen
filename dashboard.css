@@ -1,5 +1,5 @@
 /* =========================
-   RESET
+RESET
 ========================= */
 *{
   margin:0;
@@ -7,20 +7,20 @@
   box-sizing:border-box;
 }
 
-body,html{
+html,body{
   height:100%;
   font-family:Inter, sans-serif;
-  overflow-x:hidden;
+  overflow:hidden;
 }
 
 /* =========================
-   BACKGROUND GEDUNG (FIXED)
+BACKGROUND (SOFT + CLEAN)
 ========================= */
 body{
-  background:#0b0f0d;
+  background:#0b1f17;
 }
 
-/* IMAGE BACKGROUND */
+/* image */
 body::before{
   content:"";
   position:fixed;
@@ -28,47 +28,44 @@ body::before{
   background:url("ChatGPT Image Jun 25, 2026, 04_09_44 PM(2).png");
   background-size:cover;
   background-position:center;
-  filter:brightness(0.65) contrast(1.2);
+  filter:brightness(0.55) contrast(1.1);
   z-index:-2;
 }
 
-/* OVERLAY HALUS */
+/* overlay soft */
 body::after{
   content:"";
   position:fixed;
   inset:0;
   background:linear-gradient(
     135deg,
-    rgba(11,61,46,0.55),
+    rgba(11,61,46,0.65),
     rgba(0,0,0,0.75)
   );
   z-index:-1;
 }
 
 /* =========================
-   APP LAYER (PENTING FIX)
+APP STRUCTURE FIX
 ========================= */
 .app-shell{
   display:flex;
   height:100vh;
   width:100%;
-  position:relative;
 }
 
 /* =========================
-   SIDEBAR
+SIDEBAR FIX
 ========================= */
 .sidebar{
   width:270px;
-  height:100vh;
-  background:rgba(255,255,255,0.92);
-  backdrop-filter:blur(20px);
-  border-right:1px solid rgba(0,0,0,0.05);
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(18px);
   overflow-y:auto;
 }
 
 /* =========================
-   MAIN AREA
+MAIN AREA FIX
 ========================= */
 .main-area{
   flex:1;
@@ -78,21 +75,20 @@ body::after{
 }
 
 /* =========================
-   TOPBAR
+TOPBAR FIX
 ========================= */
 .topbar{
   height:70px;
-  background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(15px);
+  background:rgba(255,255,255,0.9);
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 20px;
-  border-bottom:1px solid rgba(0,0,0,0.05);
+  border-bottom:1px solid rgba(0,0,0,0.06);
 }
 
 /* =========================
-   CONTENT AREA
+CONTENT SCROLL FIX
 ========================= */
 .content{
   flex:1;
@@ -101,103 +97,107 @@ body::after{
 }
 
 /* =========================
-   HERO BANNER (FIX)
+HERO FIX
 ========================= */
 .hero-banner{
-  background:rgba(255,255,255,0.9);
-  border-radius:18px;
-  padding:22px;
+  background:rgba(255,255,255,0.92);
+  padding:20px;
+  border-radius:16px;
+  margin-bottom:16px;
   display:flex;
   justify-content:space-between;
-  margin-bottom:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* =========================
-   KPI GRID
+KPI GRID FIX
 ========================= */
 .kpi-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-bottom:20px;
+  gap:14px;
+  margin-bottom:16px;
 }
 
 .kpi-card{
   background:rgba(255,255,255,0.92);
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
-  transition:0.3s;
+  padding:16px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  transition:0.25s;
 }
 
 .kpi-card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-3px);
 }
 
 /* =========================
-   PANEL GRID
+PANEL GRID FIX
 ========================= */
 .panel-grid{
   display:grid;
   grid-template-columns:2fr 1fr;
-  gap:16px;
+  gap:14px;
 }
 
 .panel{
   background:rgba(255,255,255,0.92);
-  border-radius:16px;
-  padding:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  padding:16px;
+  border-radius:14px;
 }
 
 /* =========================
-   DONUT FIX CENTER
+CHART FIX (INI PENTING)
 ========================= */
-.donut-canvas-wrap{
+.chart-wrap{
+  height:260px;
   position:relative;
+}
+
+/* =========================
+DONUT FIX
+========================= */
+.donut-wrap{
   display:flex;
-  justify-content:center;
+  gap:12px;
   align-items:center;
 }
 
-.donut-center{
-  position:absolute;
-  text-align:center;
+/* =========================
+ACTIVITY FIX
+========================= */
+.activity-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
-/* =========================
-   ACTIVITY LIST
-========================= */
 .al-item{
   display:flex;
-  gap:12px;
-  padding:10px 0;
-  border-bottom:1px solid rgba(0,0,0,0.05);
+  justify-content:space-between;
+  gap:10px;
+  padding:10px;
+  border-radius:10px;
+  background:rgba(0,0,0,0.02);
 }
 
 /* =========================
-   QUICK ACCESS
+QUICK ACCESS FIX
 ========================= */
 .qa-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;
+  gap:12px;
+  margin-top:14px;
 }
 
 .qa-card{
   background:rgba(255,255,255,0.92);
-  padding:16px;
-  border-radius:14px;
-  transition:0.3s;
-}
-
-.qa-card:hover{
-  transform:translateY(-4px);
+  padding:14px;
+  border-radius:12px;
 }
 
 /* =========================
-   RESPONSIVE
+RESPONSIVE FIX
 ========================= */
 @media(max-width:1100px){
   .kpi-grid{
@@ -209,7 +209,7 @@ body::after{
   }
 
   .qa-grid{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
