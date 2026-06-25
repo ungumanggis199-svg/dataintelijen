@@ -6,8 +6,8 @@
 <title>Dashboard Intelijen — KN Muna</title>
 <link rel="icon" type="image/png"
   href="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="dashboard.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard_new.css">
 </head>
 <body>
 
@@ -55,7 +55,9 @@
 
         <li class="nav-item" data-page="peralatan">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
           </svg>
           Peralatan Intelijen
         </li>
@@ -75,6 +77,14 @@
 
       <p class="sb-section-label">Lainnya</p>
       <ul class="nav-list">
+
+        <li class="nav-item" data-page="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          Dashboard
+        </li>
 
         <li class="nav-item" data-page="kalender">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -103,6 +113,11 @@
         <div class="bak-tag">Trapsila Adhyaksa</div>
         <div class="bak-title">BerAKHLAK</div>
         <div class="bak-desc">Berorientasi Pelayanan, Akuntabel, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif</div>
+        <div class="bak-dots">
+          <div class="bak-dot active"></div>
+          <div class="bak-dot"></div>
+          <div class="bak-dot"></div>
+        </div>
       </div>
       <div class="sb-online">
         <span class="online-dot"></span>
@@ -127,15 +142,15 @@
 
     <!-- TOPBAR -->
     <header class="topbar">
-      <div style="display:flex;align-items:center;gap:10px;">
+      <div class="topbar-left">
         <img
           src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png"
-          alt="" style="width:28px;opacity:.7;"
+          alt=""
           onerror="this.style.display='none'">
-      </div>
-      <div class="topbar-hero">
-        <div class="th-eyebrow">Sistem Informasi</div>
-        <h1>Intelijen &nbsp;·&nbsp; Kejaksaan Negeri Muna</h1>
+        <div class="topbar-hero">
+          <div class="th-eyebrow">Sistem Informasi</div>
+          <h1>Intelijen &nbsp;·&nbsp; Kejaksaan Negeri Muna</h1>
+        </div>
       </div>
       <div class="topbar-right">
         <button class="notif-btn" title="Notifikasi">
@@ -143,13 +158,13 @@
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
           </svg>
-          <span class="notif-dot"></span>
+          <span class="notif-count">3</span>
         </button>
         <div class="user-chip" id="userChip">
           <div class="user-av" id="userAv">AD</div>
           <div>
-            <div class="user-chip-name" id="userChipName">Admin</div>
-            <div class="user-chip-role" id="userChipRole">Intelijen</div>
+            <div class="user-chip-name" id="userChipName">Intelijen</div>
+            <div class="user-chip-role" id="userChipRole">Admin</div>
           </div>
           <div class="user-chip-caret">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -171,22 +186,51 @@
         <!-- Hero Banner -->
         <div class="hero-banner">
           <div class="hb-left">
-            <div class="hb-eyebrow">Dashboard · Capaian Kinerja</div>
-            <div class="hb-title">Monitoring Intelijen<br>Kejaksaan Negeri Muna</div>
+            <div class="hb-logo-row">
+              <img
+                src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png"
+                alt=""
+                onerror="this.style.display='none'">
+              <span class="hb-eyebrow">Kejaksaan Negeri Muna</span>
+            </div>
+            <div class="hb-title">Intelijen</div>
+            <div class="hb-subtitle">Kejaksaan Negeri Muna</div>
+            <div class="hb-divider-row">
+              <div class="hb-divider-line"></div>
+              <div class="hb-gold-dot"></div>
+              <div class="hb-gold-dot"></div>
+              <div class="hb-gold-dot"></div>
+            </div>
             <div class="hb-sub">Profesional · Responsif · Integritas · Melayani</div>
+            <div class="hb-stats-row">
+              <div class="hb-stat-item">
+                <div class="hb-stat-val">76%</div>
+                <div class="hb-stat-label">Capaian Tahun Ini</div>
+              </div>
+              <div class="hb-vdivider"></div>
+              <div class="hb-stat-item">
+                <div class="hb-stat-val">90%</div>
+                <div class="hb-stat-label">Target Tahun</div>
+              </div>
+              <div class="hb-vdivider"></div>
+              <div class="hb-stat-item">
+                <div class="hb-stat-val">88%</div>
+                <div class="hb-stat-label">Proyeksi Akhir</div>
+              </div>
+            </div>
           </div>
+          <!-- Building photo -->
           <div class="hb-right">
-            <div class="hb-stat">
-              <div class="hb-stat-val">76%</div>
-              <div class="hb-stat-label">Capaian Tahun Ini</div>
-            </div>
-            <div class="hb-stat">
-              <div class="hb-stat-val">90%</div>
-              <div class="hb-stat-label">Target Tahun</div>
-            </div>
-            <div class="hb-stat">
-              <div class="hb-stat-val">88%</div>
-              <div class="hb-stat-label">Proyeksi Akhir</div>
+            <img
+              class="hb-building"
+              src="ChatGPT_Image_Jun_25__2026__04_09_44_PM.png"
+              alt="Gedung Kejaksaan Negeri Muna"
+              onerror="this.style.background='linear-gradient(135deg,#1a6647,#0B3D2E)';this.style.display='block';">
+            <div class="hb-wm">
+              <img
+                src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png"
+                alt=""
+                onerror="this.style.display='none'">
             </div>
           </div>
         </div>
@@ -194,17 +238,18 @@
         <!-- KPI Grid -->
         <div class="kpi-grid">
 
-          <div class="kpi-card">
+          <!-- Card 1 -->
+          <div class="kpi-card dark">
             <div class="kpi-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
+                <path d="M9 12l2 2 4-4"/>
               </svg>
             </div>
             <div class="kpi-body">
               <div class="kpi-label">Total Kegiatan Intelijen</div>
               <div class="kpi-value">48</div>
-              <div class="kpi-delta up">
+              <div class="kpi-delta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
                   <polyline points="17 6 23 6 23 12"/>
@@ -214,7 +259,8 @@
             </div>
           </div>
 
-          <div class="kpi-card">
+          <!-- Card 2 -->
+          <div class="kpi-card dark">
             <div class="kpi-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -226,7 +272,7 @@
             <div class="kpi-body">
               <div class="kpi-label">Laporan Intelijen</div>
               <div class="kpi-value">32</div>
-              <div class="kpi-delta up">
+              <div class="kpi-delta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
                   <polyline points="17 6 23 6 23 12"/>
@@ -236,7 +282,8 @@
             </div>
           </div>
 
-          <div class="kpi-card">
+          <!-- Card 3 -->
+          <div class="kpi-card dark">
             <div class="kpi-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -245,7 +292,7 @@
             <div class="kpi-body">
               <div class="kpi-label">Operasi / Kegiatan</div>
               <div class="kpi-value">15</div>
-              <div class="kpi-delta up">
+              <div class="kpi-delta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
                   <polyline points="17 6 23 6 23 12"/>
@@ -255,8 +302,9 @@
             </div>
           </div>
 
-          <div class="kpi-card">
-            <div class="kpi-icon gold-bg">
+          <!-- Card 4 (light) -->
+          <div class="kpi-card light">
+            <div class="kpi-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                 <line x1="16" y1="2" x2="16" y2="6"/>
@@ -266,8 +314,8 @@
             </div>
             <div class="kpi-body">
               <div class="kpi-label">Capaian Tahun Ini</div>
-              <div class="kpi-value" style="color:var(--gold);">76%</div>
-              <div class="kpi-delta up">
+              <div class="kpi-value">76%</div>
+              <div class="kpi-delta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
                   <polyline points="17 6 23 6 23 12"/>
@@ -280,15 +328,17 @@
         </div>
         <!-- /KPI Grid -->
 
-        <!-- Panel Grid: Chart + Donut -->
+        <!-- Panel Grid -->
         <div class="panel-grid">
 
-          <!-- Line Chart -->
+          <!-- Line Chart Panel -->
           <div class="panel">
             <div class="panel-head">
               <div class="ph-left">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  <line x1="18" y1="20" x2="18" y2="10"/>
+                  <line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/>
                 </svg>
                 <h3>Capaian Kinerja Bulanan</h3>
               </div>
@@ -303,23 +353,47 @@
             <div class="chart-summary">
               <div class="cs-item">
                 <div class="cs-label">Rata-rata Capaian</div>
-                <div class="cs-val">66% <span class="cs-arrow">↗</span></div>
+                <div class="cs-val">
+                  66%
+                  <span class="cs-trend">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                      <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                  </span>
+                </div>
               </div>
               <div class="cs-item">
                 <div class="cs-label">Target Tahun Ini</div>
-                <div class="cs-val">90% <span class="cs-arrow">↗</span></div>
+                <div class="cs-val">
+                  90%
+                  <span class="cs-trend">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                      <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                  </span>
+                </div>
               </div>
               <div class="cs-item">
                 <div class="cs-label">Proyeksi Akhir Tahun</div>
-                <div class="cs-val">88% <span class="cs-arrow">↗</span></div>
+                <div class="cs-val">
+                  88%
+                  <span class="cs-trend">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                      <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Right column: Donut + Activities -->
+          <!-- Right column -->
           <div style="display:flex;flex-direction:column;gap:14px;">
 
-            <!-- Donut Chart -->
+            <!-- Donut -->
             <div class="panel">
               <div class="panel-head">
                 <div class="ph-left">
@@ -327,14 +401,15 @@
                     <circle cx="12" cy="12" r="10"/>
                     <path d="M12 2a10 10 0 0 1 10 10"/>
                   </svg>
-                  <h3>Distribusi Kegiatan</h3>
+                  <h3>Distribusi Kegiatan Intelijen</h3>
                 </div>
-                <span class="panel-tag">Total 48</span>
+                <span class="panel-more">···</span>
               </div>
               <div class="donut-wrap">
                 <div class="donut-canvas-wrap">
-                  <canvas id="donutChart" width="128" height="128"></canvas>
+                  <canvas id="donutChart" width="130" height="130"></canvas>
                   <div class="donut-center">
+                    <div class="dc-label-top">Total</div>
                     <div class="dc-num">48</div>
                     <div class="dc-label">Kegiatan</div>
                   </div>
@@ -343,27 +418,32 @@
                   <div class="dl-item">
                     <div class="dl-dot" style="background:#0B3D2E;"></div>
                     <span class="dl-label">Pengamanan Kebijakan</span>
-                    <span class="dl-val">29%</span>
+                    <span class="dl-pct">29%</span>
+                    <span class="dl-abs">(14)</span>
                   </div>
                   <div class="dl-item">
                     <div class="dl-dot" style="background:#2E9A6B;"></div>
                     <span class="dl-label">Penggalangan</span>
-                    <span class="dl-val">25%</span>
+                    <span class="dl-pct">25%</span>
+                    <span class="dl-abs">(12)</span>
                   </div>
                   <div class="dl-item">
                     <div class="dl-dot" style="background:#B8902E;"></div>
                     <span class="dl-label">Pengawasan Aliran</span>
-                    <span class="dl-val">21%</span>
+                    <span class="dl-pct">21%</span>
+                    <span class="dl-abs">(10)</span>
                   </div>
                   <div class="dl-item">
                     <div class="dl-dot" style="background:#4A90D9;"></div>
                     <span class="dl-label">Deteksi Dini</span>
-                    <span class="dl-val">15%</span>
+                    <span class="dl-pct">15%</span>
+                    <span class="dl-abs">(7)</span>
                   </div>
                   <div class="dl-item">
                     <div class="dl-dot" style="background:#C8C8C0;"></div>
                     <span class="dl-label">Lainnya</span>
-                    <span class="dl-val">10%</span>
+                    <span class="dl-pct">10%</span>
+                    <span class="dl-abs">(5)</span>
                   </div>
                 </div>
               </div>
@@ -385,17 +465,22 @@
                 <div class="al-item">
                   <div class="al-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                      <polyline points="14 2 14 8 20 8"/>
-                      <line x1="12" y1="18" x2="12" y2="12"/>
-                      <line x1="9" y1="15" x2="15" y2="15"/>
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                      <circle cx="9" cy="7" r="4"/>
                     </svg>
                   </div>
                   <div class="al-body">
                     <div class="al-title">Laporan intelijen baru ditambahkan</div>
                     <div class="al-sub">Laporan Intelijen — Pengawasan Ormas</div>
                   </div>
-                  <div class="al-time">2 jam lalu</div>
+                  <div class="al-right">
+                    <div class="al-time">2 jam yang lalu</div>
+                    <div class="al-chevron">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="al-item">
@@ -409,7 +494,14 @@
                     <div class="al-title">Kegiatan penggalangan masyarakat</div>
                     <div class="al-sub">Desa Kontunaga, Kec. Kontunaga</div>
                   </div>
-                  <div class="al-time">5 jam lalu</div>
+                  <div class="al-right">
+                    <div class="al-time">5 jam yang lalu</div>
+                    <div class="al-chevron">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="al-item">
@@ -424,7 +516,14 @@
                     <div class="al-title">Deteksi dini potensi gangguan kamtibmas</div>
                     <div class="al-sub">Kec. Katobu</div>
                   </div>
-                  <div class="al-time">1 hari lalu</div>
+                  <div class="al-right">
+                    <div class="al-time">1 hari yang lalu</div>
+                    <div class="al-chevron">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -484,12 +583,14 @@
             <div class="qa-card" data-page="peralatan">
               <div class="qa-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
                 </svg>
               </div>
               <div class="qa-card-title">Peralatan Intelijen</div>
               <div class="qa-card-sub">
-                Data & Inventaris
+                Data &amp; Inventaris
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="9 18 15 12 9 6"/>
                 </svg>
@@ -521,9 +622,7 @@
       <!-- /PAGE CAPAIAN -->
 
 
-      <!-- ==================
-           PAGE: APLIKASI INTELIJEN
-           ================== -->
+      <!-- PAGE: APLIKASI -->
       <section class="page" id="page-aplikasi">
         <div class="empty-state">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -537,24 +636,20 @@
         </div>
       </section>
 
-
-      <!-- ==================
-           PAGE: PERALATAN
-           ================== -->
+      <!-- PAGE: PERALATAN -->
       <section class="page" id="page-peralatan">
         <div class="empty-state">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
           </svg>
           <h3>Peralatan Intelijen</h3>
           <p>Data inventaris dan peralatan intelijen Kejaksaan Negeri Muna akan ditampilkan di sini.</p>
         </div>
       </section>
 
-
-      <!-- ==================
-           PAGE: PELAPORAN
-           ================== -->
+      <!-- PAGE: PELAPORAN -->
       <section class="page" id="page-pelaporan">
         <div class="empty-state">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -566,10 +661,19 @@
         </div>
       </section>
 
+      <!-- PAGE: DASHBOARD -->
+      <section class="page" id="page-dashboard">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <h3>Dashboard</h3>
+          <p>Ringkasan informasi dan statistik utama sistem intelijen Kejaksaan Negeri Muna.</p>
+        </div>
+      </section>
 
-      <!-- ==================
-           PAGE: KALENDER
-           ================== -->
+      <!-- PAGE: KALENDER -->
       <section class="page" id="page-kalender">
         <div class="empty-state">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -583,10 +687,7 @@
         </div>
       </section>
 
-
-      <!-- ==================
-           PAGE: PENGATURAN
-           ================== -->
+      <!-- PAGE: PENGATURAN -->
       <section class="page" id="page-pengaturan">
         <div class="empty-state">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -609,6 +710,8 @@
 
 <!-- Chart.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<!-- Chart.js Data Labels Plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
 
 <script>
 /* =====================
@@ -660,11 +763,14 @@ document.getElementById('logoutBtn').addEventListener('click', function(e){
 });
 
 /* =====================
-   LINE CHART
+   LINE CHART — with data labels on each point
    ===================== */
 (function(){
   const ctx = document.getElementById('lineChart');
   if(!ctx) return;
+
+  // Register the datalabels plugin
+  Chart.register(ChartDataLabels);
 
   const labels = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agt','Sep','Okt','Nov','Des'];
   const data2024 = [45,52,60,55,68,72,65,70,75,80,76,null];
@@ -676,13 +782,14 @@ document.getElementById('logoutBtn').addEventListener('click', function(e){
       labels,
       datasets:[{
         data: data2024,
-        borderColor:'#0B3D2E',
-        backgroundColor:'rgba(11,61,46,0.07)',
+        borderColor:'#2E9A6B',
+        backgroundColor:'rgba(46,154,107,0.08)',
         borderWidth:2.5,
-        pointRadius:4,
-        pointBackgroundColor:'#0B3D2E',
+        pointRadius:5,
+        pointBackgroundColor:'#2E9A6B',
         pointBorderColor:'#fff',
         pointBorderWidth:2,
+        pointHoverRadius:7,
         fill:true,
         tension:0.38,
         spanGaps:false
@@ -700,6 +807,14 @@ document.getElementById('logoutBtn').addEventListener('click', function(e){
           callbacks:{
             label: ctx => ' ' + ctx.parsed.y + '%'
           }
+        },
+        datalabels:{
+          display: true,
+          align: 'top',
+          offset: 4,
+          color: '#0B3D2E',
+          font:{ size:10.5, weight:'700' },
+          formatter: val => val !== null ? val + '%' : ''
         }
       },
       scales:{
@@ -719,7 +834,8 @@ document.getElementById('logoutBtn').addEventListener('click', function(e){
           grid:{display:false},
           border:{display:false}
         }
-      }
+      },
+      layout:{ padding:{ top: 20 } }
     }
   });
 
@@ -742,9 +858,9 @@ document.getElementById('logoutBtn').addEventListener('click', function(e){
       datasets:[{
         data:[14,12,10,7,5],
         backgroundColor:['#0B3D2E','#2E9A6B','#B8902E','#4A90D9','#C8C8C0'],
-        borderWidth:2.5,
+        borderWidth:3,
         borderColor:'#fff',
-        hoverOffset:5
+        hoverOffset:6
       }]
     },
     options:{
@@ -759,28 +875,12 @@ document.getElementById('logoutBtn').addEventListener('click', function(e){
           callbacks:{
             label: ctx => ' ' + ctx.parsed + ' kegiatan'
           }
-        }
+        },
+        datalabels:{ display: false }
       }
     }
   });
 })();
-  // =========================
-// FLOATING LIGHT GENERATOR
-// =========================
-function createLights(){
-  for(let i=0;i<18;i++){
-    const l = document.createElement("div");
-    l.className = "light";
-
-    l.style.left = Math.random()*100 + "vw";
-    l.style.animationDuration = (8 + Math.random()*10) + "s";
-    l.style.opacity = Math.random();
-
-    document.body.appendChild(l);
-  }
-}
-
-createLights();
 </script>
 
 </body>
