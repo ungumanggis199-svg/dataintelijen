@@ -27,6 +27,8 @@ html,body{
   --danger:#c0463d;
   --card-radius:14px;
   --shadow:0 6px 18px rgba(0,0,0,.08);
+  --font-display:'Playfair Display', Georgia, serif;
+  --grad-green:linear-gradient(135deg,#0B3D2E 0%,#1f8a64 100%);
 }
 
 /* =========================
@@ -83,9 +85,21 @@ img{ max-width:100%; }
   background:rgba(255,255,255,0.95);
   backdrop-filter:blur(18px);
   overflow-y:auto;
+  overflow-x:hidden;
   display:flex;
   flex-direction:column;
+  transition:width .25s ease;
 }
+.sidebar.collapsed{ width:78px; }
+.sidebar.collapsed .sb-brand-text,
+.sidebar.collapsed .sb-section-label,
+.sidebar.collapsed .nav-text,
+.sidebar.collapsed .nav-badge,
+.sidebar.collapsed .sb-footer{
+  display:none;
+}
+.sidebar.collapsed .nav-item{ justify-content:center; }
+.sidebar.collapsed .sb-brand{ justify-content:center; }
 
 .sb-brand{
   display:flex;
@@ -195,6 +209,24 @@ img{ max-width:100%; }
   line-height:1.4;
   opacity:.85;
   margin-top:4px;
+  transition:opacity .2s ease;
+  min-height:42px;
+}
+.bak-dots{
+  display:flex;
+  gap:5px;
+  margin-top:10px;
+}
+.bak-dot{
+  width:14px;
+  height:4px;
+  border-radius:3px;
+  background:rgba(255,255,255,.3);
+  transition:.25s;
+}
+.bak-dot.active{
+  background:var(--gold);
+  width:20px;
 }
 .sb-online{
   display:flex;
