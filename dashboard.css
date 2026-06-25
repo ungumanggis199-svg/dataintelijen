@@ -96,6 +96,8 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
   flex-direction:column;
   overflow-y:auto;
   overflow-x:hidden;
+   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 /* Brand block */
@@ -394,6 +396,8 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
   justify-content:space-between;
   position:relative;
   overflow:hidden;
+   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 .hero-banner::before{
   content:'';
@@ -477,6 +481,8 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
   display:flex;
   align-items:flex-start;
   gap:14px;
+   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 .kpi-card:hover{
   transform:translateY(-2px);
@@ -535,6 +541,8 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
   border-radius:var(--r);
   padding:20px 22px;
   box-shadow:var(--shadow-sm);
+   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 .panel-full{ grid-column:1/-1; }
 .panel-head{
@@ -790,4 +798,28 @@ button{font-family:inherit; cursor:pointer; border:none; background:none;}
   .page{ padding:16px 14px 40px; }
   .kpi-grid{ grid-template-columns:1fr 1fr; }
   .qa-grid{ grid-template-columns:repeat(2,1fr); }
+}
+.kpi-card:hover{
+  box-shadow:
+    0 10px 30px rgba(11,61,46,0.15),
+    0 0 20px rgba(46,154,107,0.15);
+}
+
+.hero-banner{
+  box-shadow: 0 10px 40px rgba(11,61,46,0.15);
+}
+.topbar::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-60%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  animation:sweep 6s infinite;
+}
+
+@keyframes sweep{
+  0%{ left:-60%; }
+  100%{ left:120%; }
 }
