@@ -1,32 +1,58 @@
 // ===== LOGIN PAGE =====
-function doPost(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Data Member");
-  const data = sheet.getDataRange().getValues();
+const API_URL = "https://script.google.com/macros/s/AKfycbzMZVV93BH3d_aL1uADw5Whj_bYIXoZn8_2acT9g5HLRHKTuO_rFCUEoV4aa4XPFMNTMg/exec";
 
-  const req = JSON.parse(e.postData.contents);
-  const username = req.username;
-  const password = req.password;
+const loginForm = document.getElementById("loginForm");
 
-  for (let i = 1; i < data.length; i++) {
-    const user = data[i][0];
-    const pass = data[i][1];
+loginForm.addEventListener("submit", async function(e){
+  e.preventDefault();
 
-    if (user === username && pass === password) {
-      return ContentService
-        .createTextOutput(JSON.stringify({
-          status: "success",
-          username: user
-        }))
-        .setMimeType(ContentService.MimeType.JSON);
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  const btn = loginForm.querySelector("button");
+  btn.textContent = "Authenticating...";
+
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify({ username, password })
+    });
+
+    const data = await res.json();
+
+    if (data.status === "success") {
+
+      // SESSION SECURITY
+      const session = {
+        username: data.username,
+        role: data.role,
+        token: data.token,
+        loginTime: Date.now()
+      };
+
+      localStorage.setItem("intel_session", JSON.stringify(session));
+
+      btn.textContent = "Access Granted";
+
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 800);
+
+    } else {
+      btn.textContent = "Access Denied";
+      btn.style.background = "#8B0000";
+
+      setTimeout(() => {
+        btn.textContent = "Masuk ke Sistem Intelijen";
+        btn.style.background = "#0B3D2E";
+      }, 1500);
     }
-  }
 
-  return ContentService
-    .createTextOutput(JSON.stringify({
-      status: "failed"
-    }))
-    .setMimeType(ContentService.MimeType.JSON);
-}
+  } catch (err) {
+    btn.textContent = "Server Error";
+    console.error(err);
+  }
+});
 
 // ===== DASHBOARD PAGE =====
 const navItems = document.querySelectorAll('.nav-item');
@@ -94,4 +120,34 @@ if (togglePassword && passwordInput) {
 
     togglePassword.textContent = isPassword ? "🙈" : "👁";
   });
+}
+const session = JSON.parse(localStorage.getItem("intel_session"));
+
+if (!session || !session.token) {
+  window.location.href = "index.html";
+}
+const session = JSON.parse(localStorage.getItem("intel_session"));
+
+if (session) {
+  const now = Date.now();
+  const maxTime = 60 * 60 * 1000; // 1 jam
+
+  if (now - session.loginTime > maxTime) {
+    localStorage.removeItem("intel_session");
+    alert("Session expired");
+    window.location.href = "index.html";
+  }
+}
+const session = JSON.parse(localStorage.getItem("intel_session"));
+
+if (session.role === "admin") {
+  console.log("Full Access Dashboard");
+}
+
+if (session.role === "intel") {
+  console.log("Intel Access");
+}
+
+if (session.role === "viewer") {
+  console.log("Read Only Mode");
 }
