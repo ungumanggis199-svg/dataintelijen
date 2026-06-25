@@ -1,14 +1,31 @@
 // ===== LOGIN PAGE =====
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-  loginForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const btn = loginForm.querySelector('.btn-primary span');
-    btn.textContent = 'Memverifikasi…';
-    setTimeout(() => {
-      window.location.href = 'dashboard.html';
-    }, 600);
-  });
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Data Member");
+  const data = sheet.getDataRange().getValues();
+
+  const req = JSON.parse(e.postData.contents);
+  const username = req.username;
+  const password = req.password;
+
+  for (let i = 1; i < data.length; i++) {
+    const user = data[i][0];
+    const pass = data[i][1];
+
+    if (user === username && pass === password) {
+      return ContentService
+        .createTextOutput(JSON.stringify({
+          status: "success",
+          username: user
+        }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
+  return ContentService
+    .createTextOutput(JSON.stringify({
+      status: "failed"
+    }))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 // ===== DASHBOARD PAGE =====
