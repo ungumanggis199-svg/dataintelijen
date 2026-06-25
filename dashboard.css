@@ -1,28 +1,23 @@
-/* =========================================
-   DASHBOARD INTELIJEN - CLEAN VERSION
-   KEJAKSAAN NEGERI MUNA
-   ========================================= */
-
-/* =====================
+/* =========================
    RESET
-   ===================== */
+========================= */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-html,body{
+body,html{
   height:100%;
   font-family:Inter, sans-serif;
   overflow-x:hidden;
 }
 
-/* =====================
-   BACKGROUND GEDUNG
-   ===================== */
+/* =========================
+   BACKGROUND GEDUNG (FIXED)
+========================= */
 body{
-  background:#000;
+  background:#0b0f0d;
 }
 
 /* IMAGE BACKGROUND */
@@ -30,164 +25,191 @@ body::before{
   content:"";
   position:fixed;
   inset:0;
-
   background:url("ChatGPT Image Jun 25, 2026, 04_09_44 PM(2).png");
   background-size:cover;
   background-position:center;
-  background-repeat:no-repeat;
-
-  filter:brightness(0.80) contrast(1.15) saturate(1.1);
-  transform:scale(1.08);
-
-  animation:zoomSlow 18s ease-in-out infinite alternate;
-  z-index:-3;
+  filter:brightness(0.65) contrast(1.2);
+  z-index:-2;
 }
 
-/* OVERLAY PREMIUM (GOLD + GREEN) */
+/* OVERLAY HALUS */
 body::after{
   content:"";
   position:fixed;
   inset:0;
-
-  background:
-    radial-gradient(circle at 20% 20%, rgba(11,61,46,0.35), transparent 45%),
-    radial-gradient(circle at 80% 60%, rgba(184,144,46,0.18), transparent 50%),
-    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
-
-  z-index:-2;
+  background:linear-gradient(
+    135deg,
+    rgba(11,61,46,0.55),
+    rgba(0,0,0,0.75)
+  );
+  z-index:-1;
 }
 
-/* ANIMASI BACKGROUND */
-@keyframes zoomSlow{
-  0%{transform:scale(1.08);}
-  100%{transform:scale(1.14);}
-}
-
-/* =====================
-   GLASS EFFECT GLOBAL
-   ===================== */
-.sidebar,
-.panel,
-.kpi-card,
-.hero-banner,
-.topbar{
-  background:rgba(255,255,255,0.78);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  border:1px solid rgba(255,255,255,0.35);
-}
-
-/* shadow premium */
-.panel,
-.kpi-card{
-  box-shadow:0 10px 30px rgba(0,0,0,0.10);
-}
-
-/* =====================
-   SIDEBAR
-   ===================== */
-.sidebar{
-  width:260px;
+/* =========================
+   APP LAYER (PENTING FIX)
+========================= */
+.app-shell{
+  display:flex;
   height:100vh;
-  position:fixed;
-  left:0;
-  top:0;
-  overflow-y:auto;
-  background:rgba(255,255,255,0.9);
+  width:100%;
+  position:relative;
 }
 
-/* =====================
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar{
+  width:270px;
+  height:100vh;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px);
+  border-right:1px solid rgba(0,0,0,0.05);
+  overflow-y:auto;
+}
+
+/* =========================
+   MAIN AREA
+========================= */
+.main-area{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* =========================
    TOPBAR
-   ===================== */
+========================= */
 .topbar{
-  height:64px;
+  height:70px;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(15px);
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 20px;
-  position:sticky;
-  top:0;
-  z-index:10;
+  border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
-/* =====================
-   HERO
-   ===================== */
+/* =========================
+   CONTENT AREA
+========================= */
+.content{
+  flex:1;
+  overflow-y:auto;
+  padding:20px;
+}
+
+/* =========================
+   HERO BANNER (FIX)
+========================= */
 .hero-banner{
+  background:rgba(255,255,255,0.9);
+  border-radius:18px;
   padding:22px;
-  margin:20px;
-  border-radius:16px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  margin-bottom:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* =====================
+/* =========================
    KPI GRID
-   ===================== */
+========================= */
 .kpi-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:16px;
-  padding:20px;
+  margin-bottom:20px;
 }
 
 .kpi-card{
+  background:rgba(255,255,255,0.92);
   padding:18px;
-  border-radius:14px;
-  transition:0.3s ease;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  transition:0.3s;
 }
 
 .kpi-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.15);
+  transform:translateY(-5px);
 }
 
-/* =====================
+/* =========================
    PANEL GRID
-   ===================== */
+========================= */
 .panel-grid{
   display:grid;
   grid-template-columns:2fr 1fr;
   gap:16px;
-  padding:20px;
 }
 
 .panel{
+  background:rgba(255,255,255,0.92);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   DONUT FIX CENTER
+========================= */
+.donut-canvas-wrap{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.donut-center{
+  position:absolute;
+  text-align:center;
+}
+
+/* =========================
+   ACTIVITY LIST
+========================= */
+.al-item{
+  display:flex;
+  gap:12px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+/* =========================
+   QUICK ACCESS
+========================= */
+.qa-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.qa-card{
+  background:rgba(255,255,255,0.92);
+  padding:16px;
   border-radius:14px;
-  padding:20px;
+  transition:0.3s;
 }
 
-/* =====================
-   LIGHT EFFECT (OPTIONAL)
-   ===================== */
-.light{
-  position:fixed;
-  width:6px;
-  height:6px;
-  background:rgba(255,255,255,0.6);
-  border-radius:50%;
-  box-shadow:0 0 15px rgba(255,255,255,0.5);
-  animation:floatUp 10s linear infinite;
-  z-index:-1;
+.qa-card:hover{
+  transform:translateY(-4px);
 }
 
-@keyframes floatUp{
-  0%{transform:translateY(100vh); opacity:0;}
-  20%{opacity:1;}
-  100%{transform:translateY(-20vh); opacity:0;}
-}
-
-/* =====================
+/* =========================
    RESPONSIVE
-   ===================== */
-@media(max-width:1024px){
+========================= */
+@media(max-width:1100px){
   .kpi-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
   .panel-grid{
     grid-template-columns:1fr;
+  }
+
+  .qa-grid{
+    grid-template-columns:1fr 1fr;
   }
 }
 
@@ -197,6 +219,10 @@ body::after{
   }
 
   .kpi-grid{
+    grid-template-columns:1fr;
+  }
+
+  .qa-grid{
     grid-template-columns:1fr;
   }
 }
