@@ -1,58 +1,72 @@
 // ===== LOGIN PAGE =====
+document.addEventListener("DOMContentLoaded", () => {
 const API_URL = "https://script.google.com/macros/s/AKfycbzMZVV93BH3d_aL1uADw5Whj_bYIXoZn8_2acT9g5HLRHKTuO_rFCUEoV4aa4XPFMNTMg/exec";
 
 const loginForm = document.getElementById("loginForm");
 
-loginForm.addEventListener("submit", async function(e){
-  e.preventDefault();
+if (loginForm) {
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
 
-  const btn = loginForm.querySelector("button");
-  btn.textContent = "Authenticating...";
-
-  try {
-    const res = await fetch(API_URL, {
-      method: "POST",
-      body: JSON.stringify({ username, password })
+  // ICON MATA (AMAN DI SINI)
+  if (togglePassword && passwordInput) {
+    togglePassword.addEventListener("click", () => {
+      const isHidden = passwordInput.type === "password";
+      passwordInput.type = isHidden ? "text" : "password";
+      togglePassword.textContent = isHidden ? "🙈" : "👁";
     });
+  }
 
-    const data = await res.json();
+  // LOGIN SYSTEM
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    if (data.status === "success") {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-      // SESSION SECURITY
-      const session = {
-        username: data.username,
-        role: data.role,
-        token: data.token,
-        loginTime: Date.now()
-      };
+    const btn = loginForm.querySelector("button");
+    btn.textContent = "Authenticating...";
 
-      localStorage.setItem("intel_session", JSON.stringify(session));
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, password })
+      });
 
-      btn.textContent = "Access Granted";
+      const data = await res.json();
 
-      setTimeout(() => {
-        window.location.href = "dashboard.html";
-      }, 800);
+      if (data.status === "success") {
 
-    } else {
-      btn.textContent = "Access Denied";
-      btn.style.background = "#8B0000";
+        localStorage.setItem("intel_session", JSON.stringify({
+          username: data.username,
+          role: data.role,
+          token: data.token,
+          loginTime: Date.now()
+        }));
 
-      setTimeout(() => {
-        btn.textContent = "Masuk ke Sistem Intelijen";
-        btn.style.background = "#0B3D2E";
-      }, 1500);
+        btn.textContent = "Access Granted";
+
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 800);
+
+      } else {
+        btn.textContent = "Access Denied";
+        btn.style.background = "#8B0000";
+      }
+
+    } catch (err) {
+      console.error(err);
+      btn.textContent = "Server Error";
     }
 
-  } catch (err) {
-    btn.textContent = "Server Error";
-    console.error(err);
-  }
-});
+  });
+
+}
 
 // ===== DASHBOARD PAGE =====
 const navItems = document.querySelectorAll('.nav-item');
@@ -91,24 +105,7 @@ if (dateChip) {
   const now = new Date();
   dateChip.textContent = now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 }
-loginForm.addEventListener('submit', function (e) {
-  e.preventDefault();
 
-  const btn = loginForm.querySelector('.btn-primary span');
-  const btnParent = loginForm.querySelector('.btn-primary');
-
-  btn.textContent = 'Memverifikasi identitas...';
-  btnParent.style.opacity = "0.85";
-
-  setTimeout(() => {
-    btn.textContent = 'Autentikasi berhasil';
-    btnParent.style.background = "#155A41";
-
-    setTimeout(() => {
-      window.location.href = 'dashboard.html';
-    }, 600);
-  }, 1200);
-});
 const togglePassword = document.getElementById("togglePassword");
 const passwordInput = document.getElementById("password");
 
