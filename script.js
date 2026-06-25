@@ -151,3 +151,18 @@ if (session.role === "intel") {
 if (session.role === "viewer") {
   console.log("Read Only Mode");
 }
+function showPage(id){
+  const pages = document.querySelectorAll(".page");
+  const menus = document.querySelectorAll(".menu");
+
+  pages.forEach(p => p.classList.remove("active"));
+  menus.forEach(m => m.classList.remove("active"));
+
+  document.getElementById(id).classList.add("active");
+  event.target.classList.add("active");
+}
+
+function logout(){
+  localStorage.removeItem("intel_session");
+  window.location.href = "index.html";
+}
