@@ -101,7 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 2000);
 
       }
+      function createLights(){
+  for(let i=0;i<15;i++){
+    const l = document.createElement("div");
+    l.className = "light";
 
+    l.style.left = Math.random()*100 + "vw";
+    l.style.animationDuration = (8 + Math.random()*10) + "s";
+
+    document.body.appendChild(l);
+  }
+}
+createLights();
     });
   }
 
