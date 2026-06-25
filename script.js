@@ -1,25 +1,14 @@
+
 // ===============================
-// CONFIG API GOOGLE APPS SCRIPT
+// CONFIG
 // ===============================
 const API_URL = "https://script.google.com/macros/s/AKfycbzMZVV93BH3d_aL1uADw5Whj_bYIXoZn8_2acT9g5HLRHKTuO_rFCUEoV4aa4XPFMNTMg/exec";
 
-fetch(API_URL, {
-  method: "POST",
-  body: JSON.stringify({
-    username,
-    password
-  })
-});
-// ⛔ GANTI DENGAN LINK DEPLOY KAMU
-
 // ===============================
-// SAFE INIT (ANTI ERROR CRASH)
+// INIT SAFE
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===============================
-  // LOGIN SYSTEM
-  // ===============================
   const loginForm = document.getElementById("loginForm");
 
   if (loginForm) {
@@ -28,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.getElementById("password");
 
     // ===============================
-    // TOGGLE PASSWORD (EYE ICON)
+    // PASSWORD TOGGLE FIX
     // ===============================
     if (togglePassword && passwordInput) {
       togglePassword.addEventListener("click", () => {
@@ -44,24 +33,42 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
 
       const btn = loginForm.querySelector("button");
+
       btn.textContent = "Authenticating...";
       btn.disabled = true;
 
       try {
 
-   const res = await fetch(API_URL, {
-  method: "POST",
-  body: JSON.stringify({
-    username,
-    password
-  })
-});
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            username,
+            password
+          })
+        });
 
-        const data = await res.json();
+        // ===============================
+        // CHECK HTTP STATUS
+        // ===============================
+        if (!res.ok) {
+          throw new Error("HTTP Error: " + res.status);
+        }
+
+        const text = await res.text();
+
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (err) {
+          throw new Error("Response bukan JSON: " + text);
+        }
 
         // ===============================
         // LOGIN SUCCESS
@@ -81,7 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "dashboard.html";
           }, 800);
 
-        } 
+        }
+
         // ===============================
         // LOGIN FAILED
         // ===============================
@@ -91,13 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
           setTimeout(() => {
             btn.textContent = "Masuk ke Sistem Intelijen";
-            btn.style.background = "#0B3D2E";
             btn.disabled = false;
+            btn.style.background = "#0B3D2E";
           }, 1500);
         }
 
       } catch (err) {
-        console.error("Login Error:", err);
+
+        console.error("LOGIN ERROR:", err);
 
         btn.textContent = "Server Error";
         btn.style.background = "#8B0000";
@@ -106,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
           btn.textContent = "Masuk ke Sistem Intelijen";
           btn.disabled = false;
           btn.style.background = "#0B3D2E";
-        }, 1500);
+        }, 2000);
       }
 
     });
@@ -122,13 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!session || !session.token) {
       window.location.href = "index.html";
     }
-
   }
 
 });
 
 // ===============================
-// DASHBOARD FUNCTIONS
+// DASHBOARD MENU
 // ===============================
 function showPage(id){
 
@@ -143,7 +151,7 @@ function showPage(id){
 }
 
 // ===============================
-// LOGOUT SYSTEM
+// LOGOUT
 // ===============================
 function logout(){
   localStorage.removeItem("intel_session");
