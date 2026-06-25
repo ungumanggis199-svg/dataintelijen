@@ -1,30 +1,48 @@
 /* =============================================
    DASHBOARD INTELIJEN — KEJAKSAAN NEGERI MUNA
    ============================================= */
+body{
+  margin:0;
+  font-family:Inter;
+  overflow-x:hidden;
+}
+
+/* GEDUNG BACKGROUND (FINAL FIX) */
 body::before{
   content:"";
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
+
+  background:url("ChatGPT Image Jun 25, 2026, 04_09_44 PM(2).png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  filter:brightness(0.85) contrast(1.1) saturate(1.1);
+  transform:scale(1.05);
+
+  animation:zoomSlow 18s ease-in-out infinite alternate;
+  z-index:-3;
+}
+
+/* OVERLAY PREMIUM */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+
   background:
-    radial-gradient(circle at 20% 20%, rgba(46,154,107,0.12), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(184,144,46,0.10), transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(11,61,46,0.08), transparent 50%);
-  animation:floatBg 12s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 20%, rgba(11,61,46,0.35), transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(184,144,46,0.18), transparent 50%),
+    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75));
+
   z-index:-2;
 }
 
-@keyframes floatBg{
-  0%{
-    transform:scale(1) translateY(0px);
-    filter:blur(0px);
-  }
-  100%{
-    transform:scale(1.1) translateY(-10px);
-    filter:blur(2px);
-  }
+/* ANIMASI */
+@keyframes zoomSlow{
+  0%{transform:scale(1.05);}
+  100%{transform:scale(1.12);}
 }
 
 /* noise overlay */
