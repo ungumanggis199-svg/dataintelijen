@@ -1,6 +1,6 @@
 
 // ===============================
-// CONFIG
+// API
 // ===============================
 const API_URL = "https://script.google.com/macros/s/AKfycbzMZVV93BH3d_aL1uADw5Whj_bYIXoZn8_2acT9g5HLRHKTuO_rFCUEoV4aa4XPFMNTMg/exec";
 
@@ -13,22 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (loginForm) {
 
-    const togglePassword = document.getElementById("togglePassword");
     const passwordInput = document.getElementById("password");
+    const toggle = document.getElementById("togglePassword");
 
     // ===============================
-    // PASSWORD TOGGLE FIX
+    // ICON MATA FIX TOTAL
     // ===============================
-    if (togglePassword && passwordInput) {
-      togglePassword.addEventListener("click", () => {
-        const isHidden = passwordInput.type === "password";
-        passwordInput.type = isHidden ? "text" : "password";
-        togglePassword.textContent = isHidden ? "🙈" : "👁";
+    if (toggle && passwordInput) {
+      toggle.addEventListener("click", () => {
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          toggle.textContent = "🙈";
+        } else {
+          passwordInput.type = "password";
+          toggle.textContent = "👁";
+        }
+
       });
     }
 
     // ===============================
-    // LOGIN SUBMIT
+    // LOGIN SYSTEM FIX
     // ===============================
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -38,30 +44,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const btn = loginForm.querySelector("button");
 
-      btn.textContent = "Authenticating...";
+      btn.textContent = "Checking...";
       btn.disabled = true;
 
       try {
 
-const res = await fetch(API_URL, {
-  method: "POST",
-  body: JSON.stringify({
-    username,
-    password
-  })
-});
-
-const text = await res.text();
-const data = JSON.parse(text);
-
-        // ===============================
-        // CHECK HTTP STATUS
-        // ===============================
-        if (!res.ok) {
-          throw new Error("HTTP Error: " + res.status);
-        }
+        const res = await fetch(API_URL, {
+          method: "POST",
+          body: JSON.stringify({ username, password })
+        });
 
         const text = await res.text();
+
+        console.log("RAW RESPONSE:", text); // DEBUG PENTING
 
         let data;
         try {
@@ -70,9 +65,6 @@ const data = JSON.parse(text);
           throw new Error("Response bukan JSON: " + text);
         }
 
-        // ===============================
-        // LOGIN SUCCESS
-        // ===============================
         if (data.status === "success") {
 
           localStorage.setItem("intel_session", JSON.stringify({
@@ -88,19 +80,12 @@ const data = JSON.parse(text);
             window.location.href = "dashboard.html";
           }, 800);
 
-        }
-
-        // ===============================
-        // LOGIN FAILED
-        // ===============================
-        else {
-          btn.textContent = "Access Denied";
-          btn.style.background = "#8B0000";
+        } else {
+          btn.textContent = "Login Failed";
+          btn.disabled = false;
 
           setTimeout(() => {
             btn.textContent = "Masuk ke Sistem Intelijen";
-            btn.disabled = false;
-            btn.style.background = "#0B3D2E";
           }, 1500);
         }
 
@@ -109,51 +94,15 @@ const data = JSON.parse(text);
         console.error("LOGIN ERROR:", err);
 
         btn.textContent = "Server Error";
-        btn.style.background = "#8B0000";
+        btn.disabled = false;
 
         setTimeout(() => {
           btn.textContent = "Masuk ke Sistem Intelijen";
-          btn.disabled = false;
-          btn.style.background = "#0B3D2E";
         }, 2000);
+
       }
 
     });
   }
 
-  // ===============================
-  // DASHBOARD PROTECTION
-  // ===============================
-  if (window.location.pathname.includes("dashboard")) {
-
-    const session = JSON.parse(localStorage.getItem("intel_session"));
-
-    if (!session || !session.token) {
-      window.location.href = "index.html";
-    }
-  }
-
 });
-
-// ===============================
-// DASHBOARD MENU
-// ===============================
-function showPage(id){
-
-  const pages = document.querySelectorAll(".page");
-  const menus = document.querySelectorAll(".menu");
-
-  pages.forEach(p => p.classList.remove("active"));
-  menus.forEach(m => m.classList.remove("active"));
-
-  document.getElementById(id).classList.add("active");
-  event.target.classList.add("active");
-}
-
-// ===============================
-// LOGOUT
-// ===============================
-function logout(){
-  localStorage.removeItem("intel_session");
-  window.location.href = "index.html";
-}
