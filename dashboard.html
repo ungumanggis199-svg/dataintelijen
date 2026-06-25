@@ -3,88 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intelijen | Kejaksaan Negeri Muna</title>
-<link rel="stylesheet" href="style.css">
+<title>Dashboard Intelijen KN Muna</title>
+
+<link rel="stylesheet" href="dashboard.css">
 </head>
 
-<body class="dashboard-body">
+<body>
 
-<!-- HEADER -->
-<header class="top-header">
+<!-- TOP BAR -->
+<header class="topbar">
 
-  <div class="left-brand">
-    <img src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png"
-         class="logo">
-    <div>
-      <div class="instansi">Kejaksaan RI</div>
-      <div class="unit">Kejaksaan Negeri Muna</div>
+  <!-- LEFT -->
+  <div class="brand">
+    <img src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png">
+    <div class="brand-text">
+      <div class="title-small">Kejaksaan RI</div>
+      <div class="title-bold">Kejaksaan Negeri Muna</div>
     </div>
   </div>
 
+  <!-- CENTER TITLE -->
   <div class="center-title">
     Intelijen <br>
     <span>Kejaksaan Negeri Muna</span>
   </div>
 
+  <!-- RIGHT (optional user) -->
+  <div class="user-box">
+    <div class="user">Admin</div>
+  </div>
+
 </header>
 
-<!-- MAIN LAYOUT -->
-<div class="dashboard-container">
+<!-- MAIN -->
+<div class="layout">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
 
-    <div class="menu-title">MENU UTAMA</div>
-
-    <button class="menu active" onclick="showPage('kinerja')">
-      Capaian Kinerja
-    </button>
-
-    <button class="menu" onclick="showPage('aplikasi')">
-      Aplikasi Intelijen
-    </button>
-
-    <button class="menu" onclick="showPage('alat')">
-      Peralatan Intelijen
-    </button>
-
-    <button class="menu" onclick="showPage('laporan')">
-      Pelaporan Intelijen
-    </button>
-
-    <div class="logout">
-      <button onclick="logout()">Keluar</button>
-    </div>
+    <button class="menu active">Capaian Kinerja</button>
+    <button class="menu">Aplikasi Intelijen</button>
+    <button class="menu">Peralatan Intelijen</button>
+    <button class="menu">Pelaporan Intelijen</button>
 
   </aside>
 
   <!-- CONTENT -->
   <main class="content">
 
-    <section id="kinerja" class="page active">
-      <h2>Capaian Kinerja</h2>
-      <p>Monitoring kinerja intelijen Kejaksaan Negeri Muna.</p>
-    </section>
+    <!-- HERO CARD -->
+    <div class="hero">
+      <h2>Dashboard Intelijen</h2>
+      <p>Monitoring kegiatan intelijen Kejaksaan Negeri Muna</p>
+    </div>
 
-    <section id="aplikasi" class="page">
-      <h2>Aplikasi Intelijen</h2>
-      <p>Modul aplikasi operasional intelijen.</p>
-    </section>
+    <!-- CARDS -->
+    <div class="cards">
 
-    <section id="alat" class="page">
-      <h2>Peralatan Intelijen</h2>
-      <p>Inventaris dan perangkat intelijen.</p>
-    </section>
+      <div class="card">
+        <h4>Total Kegiatan</h4>
+        <h2>48</h2>
+      </div>
 
-    <section id="laporan" class="page">
-      <h2>Pelaporan Intelijen</h2>
-      <p>Laporan kegiatan dan analisa intelijen.</p>
-    </section>
+      <div class="card">
+        <h4>Laporan Intelijen</h4>
+        <h2>32</h2>
+      </div>
+
+      <div class="card">
+        <h4>Operasi / Kegiatan</h4>
+        <h2>15</h2>
+      </div>
+
+      <div class="card">
+        <h4>Capaian Tahun Ini</h4>
+        <h2>76%</h2>
+      </div>
+
+    </div>
+
+    <!-- MAIN PANEL -->
+    <div class="panel">
+
+      <h3>Capaian Kinerja Bulanan</h3>
+
+      <div class="chart">
+        <div class="bar" style="height:40%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar" style="height:65%"></div>
+        <div class="bar" style="height:50%"></div>
+        <div class="bar" style="height:70%"></div>
+        <div class="bar" style="height:80%"></div>
+      </div>
+
+    </div>
 
   </main>
 
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
