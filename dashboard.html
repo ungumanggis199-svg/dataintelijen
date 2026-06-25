@@ -3,104 +3,768 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Intelijen KN Muna</title>
-
+<title>Dashboard Intelijen — KN Muna</title>
+<link rel="icon" type="image/png"
+  href="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="dashboard.css">
 </head>
-
 <body>
 
-<!-- TOP BAR -->
-<header class="topbar">
+<div class="app-shell">
 
-  <!-- LEFT -->
-  <div class="brand">
-    <img src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png">
-    <div class="brand-text">
-      <div class="title-small">Kejaksaan RI</div>
-      <div class="title-bold">Kejaksaan Negeri Muna</div>
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+
+    <!-- Brand -->
+    <div class="sb-brand">
+      <img
+        src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png"
+        alt="Logo Kejaksaan"
+        class="sb-logo"
+        onerror="this.style.display='none'">
+      <div class="sb-brand-text">
+        <div class="sb-inst">Kejaksaan RI</div>
+        <div class="sb-name">Kejaksaan Negeri Muna</div>
+      </div>
     </div>
-  </div>
 
-  <!-- CENTER TITLE -->
-  <div class="center-title">
-    Intelijen <br>
-    <span>Kejaksaan Negeri Muna</span>
-  </div>
+    <!-- Nav -->
+    <nav class="sb-nav">
+      <p class="sb-section-label">Menu Utama</p>
+      <ul class="nav-list">
 
-  <!-- RIGHT (optional user) -->
-  <div class="user-box">
-    <div class="user">Admin</div>
-  </div>
+        <li class="nav-item active" data-page="capaian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+          Capaian Kinerja
+        </li>
 
-</header>
+        <li class="nav-item" data-page="aplikasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          Aplikasi Intelijen
+          <span class="nav-badge">4</span>
+        </li>
 
-<!-- MAIN -->
-<div class="layout">
+        <li class="nav-item" data-page="peralatan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Peralatan Intelijen
+        </li>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+        <li class="nav-item" data-page="pelaporan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          Pelaporan Intelijen
+        </li>
 
-    <button class="menu active">Capaian Kinerja</button>
-    <button class="menu">Aplikasi Intelijen</button>
-    <button class="menu">Peralatan Intelijen</button>
-    <button class="menu">Pelaporan Intelijen</button>
+      </ul>
+
+      <p class="sb-section-label">Lainnya</p>
+      <ul class="nav-list">
+
+        <li class="nav-item" data-page="kalender">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Kalender Kegiatan
+        </li>
+
+        <li class="nav-item" data-page="pengaturan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+          Pengaturan
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Footer -->
+    <div class="sb-footer">
+      <div class="berakhlak-card">
+        <div class="bak-tag">Trapsila Adhyaksa</div>
+        <div class="bak-title">BerAKHLAK</div>
+        <div class="bak-desc">Berorientasi Pelayanan, Akuntabel, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif</div>
+      </div>
+      <div class="sb-online">
+        <span class="online-dot"></span>
+        Sistem aktif
+      </div>
+      <a href="index.html" class="sb-logout" id="logoutBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Keluar dari sistem
+      </a>
+    </div>
 
   </aside>
+  <!-- /SIDEBAR -->
 
-  <!-- CONTENT -->
-  <main class="content">
 
-    <!-- HERO CARD -->
-    <div class="hero">
-      <h2>Dashboard Intelijen</h2>
-      <p>Monitoring kegiatan intelijen Kejaksaan Negeri Muna</p>
+  <!-- ============ MAIN AREA ============ -->
+  <div class="main-area">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img
+          src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png"
+          alt="" style="width:28px;opacity:.7;"
+          onerror="this.style.display='none'">
+      </div>
+      <div class="topbar-hero">
+        <div class="th-eyebrow">Sistem Informasi</div>
+        <h1>Intelijen &nbsp;·&nbsp; Kejaksaan Negeri Muna</h1>
+      </div>
+      <div class="topbar-right">
+        <button class="notif-btn" title="Notifikasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="notif-dot"></span>
+        </button>
+        <div class="user-chip" id="userChip">
+          <div class="user-av" id="userAv">AD</div>
+          <div>
+            <div class="user-chip-name" id="userChipName">Admin</div>
+            <div class="user-chip-role" id="userChipRole">Intelijen</div>
+          </div>
+          <div class="user-chip-caret">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SCROLLABLE CONTENT -->
+    <div class="content">
+
+      <!-- ==================
+           PAGE: CAPAIAN KINERJA
+           ================== -->
+      <section class="page active" id="page-capaian">
+
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+          <div class="hb-left">
+            <div class="hb-eyebrow">Dashboard · Capaian Kinerja</div>
+            <div class="hb-title">Monitoring Intelijen<br>Kejaksaan Negeri Muna</div>
+            <div class="hb-sub">Profesional · Responsif · Integritas · Melayani</div>
+          </div>
+          <div class="hb-right">
+            <div class="hb-stat">
+              <div class="hb-stat-val">76%</div>
+              <div class="hb-stat-label">Capaian Tahun Ini</div>
+            </div>
+            <div class="hb-stat">
+              <div class="hb-stat-val">90%</div>
+              <div class="hb-stat-label">Target Tahun</div>
+            </div>
+            <div class="hb-stat">
+              <div class="hb-stat-val">88%</div>
+              <div class="hb-stat-label">Proyeksi Akhir</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI Grid -->
+        <div class="kpi-grid">
+
+          <div class="kpi-card">
+            <div class="kpi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <div class="kpi-label">Total Kegiatan Intelijen</div>
+              <div class="kpi-value">48</div>
+              <div class="kpi-delta up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+                +20% dari bulan lalu
+              </div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <div class="kpi-label">Laporan Intelijen</div>
+              <div class="kpi-value">32</div>
+              <div class="kpi-delta up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+                +18% dari bulan lalu
+              </div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <div class="kpi-label">Operasi / Kegiatan</div>
+              <div class="kpi-value">15</div>
+              <div class="kpi-delta up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+                +15% dari bulan lalu
+              </div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon gold-bg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <div class="kpi-label">Capaian Tahun Ini</div>
+              <div class="kpi-value" style="color:var(--gold);">76%</div>
+              <div class="kpi-delta up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+                +12% dari target tahun ini
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /KPI Grid -->
+
+        <!-- Panel Grid: Chart + Donut -->
+        <div class="panel-grid">
+
+          <!-- Line Chart -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="ph-left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+                <h3>Capaian Kinerja Bulanan</h3>
+              </div>
+              <select class="year-sel" id="yearSel">
+                <option>Tahun 2024</option>
+                <option>Tahun 2025</option>
+              </select>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-summary">
+              <div class="cs-item">
+                <div class="cs-label">Rata-rata Capaian</div>
+                <div class="cs-val">66% <span class="cs-arrow">↗</span></div>
+              </div>
+              <div class="cs-item">
+                <div class="cs-label">Target Tahun Ini</div>
+                <div class="cs-val">90% <span class="cs-arrow">↗</span></div>
+              </div>
+              <div class="cs-item">
+                <div class="cs-label">Proyeksi Akhir Tahun</div>
+                <div class="cs-val">88% <span class="cs-arrow">↗</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column: Donut + Activities -->
+          <div style="display:flex;flex-direction:column;gap:14px;">
+
+            <!-- Donut Chart -->
+            <div class="panel">
+              <div class="panel-head">
+                <div class="ph-left">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2a10 10 0 0 1 10 10"/>
+                  </svg>
+                  <h3>Distribusi Kegiatan</h3>
+                </div>
+                <span class="panel-tag">Total 48</span>
+              </div>
+              <div class="donut-wrap">
+                <div class="donut-canvas-wrap">
+                  <canvas id="donutChart" width="128" height="128"></canvas>
+                  <div class="donut-center">
+                    <div class="dc-num">48</div>
+                    <div class="dc-label">Kegiatan</div>
+                  </div>
+                </div>
+                <div class="donut-legend">
+                  <div class="dl-item">
+                    <div class="dl-dot" style="background:#0B3D2E;"></div>
+                    <span class="dl-label">Pengamanan Kebijakan</span>
+                    <span class="dl-val">29%</span>
+                  </div>
+                  <div class="dl-item">
+                    <div class="dl-dot" style="background:#2E9A6B;"></div>
+                    <span class="dl-label">Penggalangan</span>
+                    <span class="dl-val">25%</span>
+                  </div>
+                  <div class="dl-item">
+                    <div class="dl-dot" style="background:#B8902E;"></div>
+                    <span class="dl-label">Pengawasan Aliran</span>
+                    <span class="dl-val">21%</span>
+                  </div>
+                  <div class="dl-item">
+                    <div class="dl-dot" style="background:#4A90D9;"></div>
+                    <span class="dl-label">Deteksi Dini</span>
+                    <span class="dl-val">15%</span>
+                  </div>
+                  <div class="dl-item">
+                    <div class="dl-dot" style="background:#C8C8C0;"></div>
+                    <span class="dl-label">Lainnya</span>
+                    <span class="dl-val">10%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity -->
+            <div class="panel" style="flex:1;">
+              <div class="panel-head">
+                <div class="ph-left">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  </svg>
+                  <h3>Aktivitas Terbaru</h3>
+                </div>
+                <a href="#" class="see-all-link">Lihat semua</a>
+              </div>
+              <div class="activity-list">
+
+                <div class="al-item">
+                  <div class="al-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="12" y1="18" x2="12" y2="12"/>
+                      <line x1="9" y1="15" x2="15" y2="15"/>
+                    </svg>
+                  </div>
+                  <div class="al-body">
+                    <div class="al-title">Laporan intelijen baru ditambahkan</div>
+                    <div class="al-sub">Laporan Intelijen — Pengawasan Ormas</div>
+                  </div>
+                  <div class="al-time">2 jam lalu</div>
+                </div>
+
+                <div class="al-item">
+                  <div class="al-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                      <circle cx="9" cy="7" r="4"/>
+                    </svg>
+                  </div>
+                  <div class="al-body">
+                    <div class="al-title">Kegiatan penggalangan masyarakat</div>
+                    <div class="al-sub">Desa Kontunaga, Kec. Kontunaga</div>
+                  </div>
+                  <div class="al-time">5 jam lalu</div>
+                </div>
+
+                <div class="al-item">
+                  <div class="al-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                      <line x1="12" y1="9" x2="12" y2="13"/>
+                      <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                  </div>
+                  <div class="al-body">
+                    <div class="al-title">Deteksi dini potensi gangguan kamtibmas</div>
+                    <div class="al-sub">Kec. Katobu</div>
+                  </div>
+                  <div class="al-time">1 hari lalu</div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <!-- /right column -->
+
+        </div>
+        <!-- /Panel Grid -->
+
+        <!-- Quick Access -->
+        <div class="qa-section">
+          <div class="qa-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            Akses Cepat
+          </div>
+          <div class="qa-grid">
+
+            <div class="qa-card" data-page="capaian">
+              <div class="qa-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"/>
+                  <line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+              </div>
+              <div class="qa-card-title">Capaian Kinerja</div>
+              <div class="qa-card-sub">
+                Lihat Statistik
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="qa-card" data-page="aplikasi">
+              <div class="qa-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7" rx="1"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1"/>
+                  <rect x="3" y="14" width="7" height="7" rx="1"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1"/>
+                </svg>
+              </div>
+              <div class="qa-card-title">Aplikasi Intelijen</div>
+              <div class="qa-card-sub">
+                Kelola Aplikasi
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="qa-card" data-page="peralatan">
+              <div class="qa-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <div class="qa-card-title">Peralatan Intelijen</div>
+              <div class="qa-card-sub">
+                Data & Inventaris
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="qa-card" data-page="pelaporan">
+              <div class="qa-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </div>
+              <div class="qa-card-title">Pelaporan Intelijen</div>
+              <div class="qa-card-sub">
+                Buat Laporan
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+      <!-- /PAGE CAPAIAN -->
+
+
+      <!-- ==================
+           PAGE: APLIKASI INTELIJEN
+           ================== -->
+      <section class="page" id="page-aplikasi">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          <h3>Aplikasi Intelijen</h3>
+          <p>Halaman ini menampilkan daftar aplikasi intelijen yang terdaftar dan aktif digunakan oleh Kejaksaan Negeri Muna.</p>
+        </div>
+      </section>
+
+
+      <!-- ==================
+           PAGE: PERALATAN
+           ================== -->
+      <section class="page" id="page-peralatan">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          <h3>Peralatan Intelijen</h3>
+          <p>Data inventaris dan peralatan intelijen Kejaksaan Negeri Muna akan ditampilkan di sini.</p>
+        </div>
+      </section>
+
+
+      <!-- ==================
+           PAGE: PELAPORAN
+           ================== -->
+      <section class="page" id="page-pelaporan">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          <h3>Pelaporan Intelijen</h3>
+          <p>Buat dan kelola laporan kegiatan intelijen Kejaksaan Negeri Muna secara terstruktur.</p>
+        </div>
+      </section>
+
+
+      <!-- ==================
+           PAGE: KALENDER
+           ================== -->
+      <section class="page" id="page-kalender">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <h3>Kalender Kegiatan</h3>
+          <p>Jadwal dan agenda kegiatan intelijen Kejaksaan Negeri Muna.</p>
+        </div>
+      </section>
+
+
+      <!-- ==================
+           PAGE: PENGATURAN
+           ================== -->
+      <section class="page" id="page-pengaturan">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+          <h3>Pengaturan Sistem</h3>
+          <p>Konfigurasi sistem dan preferensi pengguna dapat diatur di sini.</p>
+        </div>
+      </section>
+
     </div>
+    <!-- /SCROLLABLE CONTENT -->
 
-    <!-- CARDS -->
-    <div class="cards">
-
-      <div class="card">
-        <h4>Total Kegiatan</h4>
-        <h2>48</h2>
-      </div>
-
-      <div class="card">
-        <h4>Laporan Intelijen</h4>
-        <h2>32</h2>
-      </div>
-
-      <div class="card">
-        <h4>Operasi / Kegiatan</h4>
-        <h2>15</h2>
-      </div>
-
-      <div class="card">
-        <h4>Capaian Tahun Ini</h4>
-        <h2>76%</h2>
-      </div>
-
-    </div>
-
-    <!-- MAIN PANEL -->
-    <div class="panel">
-
-      <h3>Capaian Kinerja Bulanan</h3>
-
-      <div class="chart">
-        <div class="bar" style="height:40%"></div>
-        <div class="bar" style="height:55%"></div>
-        <div class="bar" style="height:65%"></div>
-        <div class="bar" style="height:50%"></div>
-        <div class="bar" style="height:70%"></div>
-        <div class="bar" style="height:80%"></div>
-      </div>
-
-    </div>
-
-  </main>
+  </div>
+  <!-- /MAIN AREA -->
 
 </div>
+<!-- /APP SHELL -->
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script>
+/* =====================
+   SESSION GUARD
+   ===================== */
+(function(){
+  const s = localStorage.getItem('intel_session');
+  if(!s){
+    window.location.href = 'index.html';
+    return;
+  }
+  try{
+    const d = JSON.parse(s);
+    const el = document.getElementById('userAv');
+    const nm = document.getElementById('userChipName');
+    const rl = document.getElementById('userChipRole');
+    if(d.username){
+      const initials = d.username.slice(0,2).toUpperCase();
+      if(el) el.textContent = initials;
+      if(nm) nm.textContent = d.username;
+      if(rl) rl.textContent = d.role || 'Intelijen';
+    }
+  }catch(e){}
+})();
+
+/* =====================
+   NAV ROUTING
+   ===================== */
+function navigate(pageKey){
+  document.querySelectorAll('.nav-item').forEach(n => {
+    n.classList.toggle('active', n.dataset.page === pageKey);
+  });
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.toggle('active', p.id === 'page-' + pageKey);
+  });
+}
+
+document.querySelectorAll('[data-page]').forEach(el => {
+  el.addEventListener('click', () => navigate(el.dataset.page));
+});
+
+/* =====================
+   LOGOUT
+   ===================== */
+document.getElementById('logoutBtn').addEventListener('click', function(e){
+  e.preventDefault();
+  localStorage.removeItem('intel_session');
+  window.location.href = 'index.html';
+});
+
+/* =====================
+   LINE CHART
+   ===================== */
+(function(){
+  const ctx = document.getElementById('lineChart');
+  if(!ctx) return;
+
+  const labels = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agt','Sep','Okt','Nov','Des'];
+  const data2024 = [45,52,60,55,68,72,65,70,75,80,76,null];
+  const data2025 = [50,56,64,60,72,75,70,74,78,82,80,null];
+
+  const chart = new Chart(ctx, {
+    type:'line',
+    data:{
+      labels,
+      datasets:[{
+        data: data2024,
+        borderColor:'#0B3D2E',
+        backgroundColor:'rgba(11,61,46,0.07)',
+        borderWidth:2.5,
+        pointRadius:4,
+        pointBackgroundColor:'#0B3D2E',
+        pointBorderColor:'#fff',
+        pointBorderWidth:2,
+        fill:true,
+        tension:0.38,
+        spanGaps:false
+      }]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          backgroundColor:'rgba(11,61,46,0.92)',
+          padding:10,
+          cornerRadius:8,
+          callbacks:{
+            label: ctx => ' ' + ctx.parsed.y + '%'
+          }
+        }
+      },
+      scales:{
+        y:{
+          min:0, max:100,
+          ticks:{
+            callback: v => v + '%',
+            font:{size:11},
+            color:'#8a9490',
+            stepSize:25
+          },
+          grid:{color:'rgba(0,0,0,0.04)'},
+          border:{display:false}
+        },
+        x:{
+          ticks:{font:{size:11}, color:'#8a9490'},
+          grid:{display:false},
+          border:{display:false}
+        }
+      }
+    }
+  });
+
+  document.getElementById('yearSel').addEventListener('change', function(){
+    chart.data.datasets[0].data = this.value.includes('2025') ? data2025 : data2024;
+    chart.update();
+  });
+})();
+
+/* =====================
+   DONUT CHART
+   ===================== */
+(function(){
+  const ctx = document.getElementById('donutChart');
+  if(!ctx) return;
+
+  new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      datasets:[{
+        data:[14,12,10,7,5],
+        backgroundColor:['#0B3D2E','#2E9A6B','#B8902E','#4A90D9','#C8C8C0'],
+        borderWidth:2.5,
+        borderColor:'#fff',
+        hoverOffset:5
+      }]
+    },
+    options:{
+      responsive:false,
+      cutout:'68%',
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          backgroundColor:'rgba(11,61,46,0.92)',
+          padding:10,
+          cornerRadius:8,
+          callbacks:{
+            label: ctx => ' ' + ctx.parsed + ' kegiatan'
+          }
+        }
+      }
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
