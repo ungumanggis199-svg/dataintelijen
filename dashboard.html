@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Intelijen — KN Muna</title>
+<link rel="icon" type="image/png"
+  href="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+
+    <!-- Brand -->
+    <div class="sb-brand">
+      <img
+        src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png"
+        alt="Logo Kejaksaan"
+        class="sb-logo"
+        onerror="this.style.display='none'">
+      <div class="sb-brand-text">
+        <div class="sb-inst">Kejaksaan RI</div>
+        <div class="sb-name">Kejaksaan Negeri Muna</div>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="sb-nav">
+      <p class="sb-section-label">Menu Utama</p>
+      <ul class="nav-list">
+
+        <li class="nav-item active" data-page="capaian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+          Capaian Kinerja
+        </li>
+
+        <li class="nav-item" data-page="aplikasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          Aplikasi Intelijen
+          <span class="nav-badge">4</span>
+        </li>
+
+        <li class="nav-item" data-page="peralatan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Peralatan Intelijen
+        </li>
+
+        <li class="nav-item" data-page="pelaporan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          Pelaporan Intelijen
+        </li>
+
+      </ul>
+
+      <p class="sb-section-label">Lainnya</p>
+      <ul class="nav-list">
+
+        <li class="nav-item" data-page="kalender">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Kalender Kegiatan
+        </li>
+
+        <li class="nav-item" data-page="pengaturan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+          Pengaturan
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Footer -->
+    <div class="sb-footer">
+      <div class="berakhlak-card">
+        <div class="bak-tag">Trapsila Adhyaksa</div>
+        <div class="bak-title">BerAKHLAK</div>
+        <div class="bak-desc">Berorientasi Pelayanan, Akuntabel, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif</div>
+      </div>
+      <div class="sb-online">
+        <span class="online-dot"></span>
+        Sistem aktif
+      </div>
+      <a href="index.html" class="sb-logout" id="logoutBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Keluar dari sistem
+      </a>
+    </div>
+
+  </aside>
+  <!-- /SIDEBAR -->
+
+
+  <!-- ============ MAIN AREA ============ -->
+  <div class="main-area">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img
+          src="https://raw.githubusercontent.com/ungumanggis199-svg/dataintelijen/main/Logo-Kejaksaan2.png"
+          alt="" style="width:28px;opacity:.7;"
+          onerror="this.style.display='none'">
+      </div>
+      <div class="topbar-hero">
+        <div class="th-eyebrow">Sistem Informasi</div>
+        <h1>Intelijen &nbsp;·&nbsp; Kejaksaan Negeri Muna</h1>
+      </div>
+      <div class="topbar-right">
+        <button class="notif-btn" title="Notifikasi">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="notif-dot"></span>
+        </button>
+        <div class="user-chip" id="userChip">
+          <div class="user-av" id="userAv">AD</div>
+          <div>
+            <div class="user-chip-name" id="userChipName">Admin</div>
+            <div class="user-chip-role" id="userChipRole">Intelijen</div>
+          </div>
+          <div class="user-chip-caret">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SCROLLABLE CONTENT -->
+    <div class="content">
+
+      <!-- ==================
+           PAGE: CAPAIAN KINERJA
+           ================== -->
+      <section class="page active" id="page-capaian">
+
+        <!-- Loading Overlay -->
+        <div id="capaianLoading" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:14px;">
+          <div style="width:36px;height:36px;border:3px solid rgba(11,61,46,0.15);border-top-color:#0B3D2E;border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+          <div style="color:#8a9490;font-size:13px;">Memuat data dari Google Sheets...</div>
+        </div>
+
+        <!-- Main content (hidden until data loaded) -->
+        <div id="capaianContent" style="display:none;">
+
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+          <div class="hb-left">
+            <div class="hb-eyebrow">Dashboard · Capaian Kinerja</div>
+            <div class="hb-title">Monitoring Intelijen<br>Kejaksaan Negeri Muna</div>
+            <div class="hb-sub">Profesional · Responsif · Integritas · Melayani</div>
+          </div>
+          <div class="hb-right">
+            <div class="hb-stat">
+              <div class="hb-stat-val" id="statCapaian">—</div>
+              <div class="hb-stat-label">Capaian Keseluruhan</div>
+            </div>
+            <div class="hb-stat">
+              <div class="hb-stat-val" id="statTotalTarget">—</div>
+              <div class="hb-stat-label">Total Target</div>
+            </div>
+            <div class="hb-stat">
+              <div class="hb-stat-val" id="statTotalTerlaksana">—</div>
+              <div class="hb-stat-label">Total Terlaksana</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI Grid -->
+        <div class="kpi-grid">
+
+          <div class="kpi-card">
+            <div class="kpi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <div class="kpi-label">Total Jenis Kegiatan</div>
+              <div class="kpi-value" id="kpiJenisKegiatan">—</div>
+              <div class="kpi-delta up" id="kpiJenisKegiatanSub">Data dari Google Sheets</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <div class="kpi-label">Total Target Kegiatan</div>
+              <div class="kpi-value" id="kpiTotalTarget">—</div>
+              <div class="kpi-delta up">Akumulasi semua kegiatan</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <div class="kpi-label">Total Terlaksana</div>
+              <div class="kpi-value" id="kpiTotalTerlaksana">—</div>
+              <div class="kpi-delta up" id="kpiTerlaksanaDelta">Kegiatan selesai dilaksanakan</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon gold-bg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div class="kpi-body">
+              <div class="kpi-label">Persentase Capaian</div>
+              <div class="kpi-value" id="kpiPersenCapaian" style="color:var(--gold);">—</div>
+              <div class="kpi-delta" id="kpiCapaianDelta">Terlaksana / Target × 100</div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /KPI Grid -->
+
+        <!-- Panel Grid: Bar Chart + Tabel -->
+        <div class="panel-grid">
+
+          <!-- Bar Chart Capaian per Kegiatan -->
+          <div class="panel">
+            <div class="panel-head">
+              <div class="ph-left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"/>
+                  <line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+                <h3>Capaian per Kegiatan</h3>
+              </div>
+              <span class="panel-tag" id="lastUpdatedTag">—</span>
+            </div>
+            <div class="chart-wrap" style="height:260px;">
+              <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-summary" id="chartSummary">
+              <!-- diisi dinamis -->
+            </div>
+          </div>
+
+          <!-- Right column: Donut + Tabel -->
+          <div style="display:flex;flex-direction:column;gap:14px;">
+
+            <!-- Donut Chart -->
+            <div class="panel">
+              <div class="panel-head">
+                <div class="ph-left">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2a10 10 0 0 1 10 10"/>
+                  </svg>
+                  <h3>Distribusi Kegiatan</h3>
+                </div>
+                <span class="panel-tag" id="donutTotalTag">Total —</span>
+              </div>
+              <div class="donut-wrap">
+                <div class="donut-canvas-wrap">
+                  <canvas id="donutChart" width="128" height="128"></canvas>
+                  <div class="donut-center">
+                    <div class="dc-num" id="donutCenterNum">—</div>
+                    <div class="dc-label">Terlaksana</div>
+                  </div>
+                </div>
+                <div class="donut-legend" id="donutLegend">
+                  <!-- diisi dinamis -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Tabel Detail -->
+            <div class="panel" style="flex:1;">
+              <div class="panel-head">
+                <div class="ph-left">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                  <h3>Rincian Kegiatan</h3>
+                </div>
+                <a href="https://docs.google.com/spreadsheets/d/1MCpf11JdwMze8iGfX1FkLnB7vatgwzmVuwtX2mjEWiY/edit" target="_blank" class="see-all-link">Buka Sheet ↗</a>
+              </div>
+              <div id="tabelKegiatan" style="overflow-x:auto;">
+                <!-- diisi dinamis -->
+              </div>
+            </div>
+
+          </div>
+          <!-- /right column -->
+
+        </div>
+        <!-- /Panel Grid -->
+
+        <!-- Quick Access -->
+        <div class="qa-section">
+          <div class="qa-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            Akses Cepat
+          </div>
+          <div class="qa-grid">
+
+            <div class="qa-card" data-page="capaian">
+              <div class="qa-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"/>
+                  <line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+              </div>
+              <div class="qa-card-title">Capaian Kinerja</div>
+              <div class="qa-card-sub">
+                Lihat Statistik
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="qa-card" data-page="aplikasi">
+              <div class="qa-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7" rx="1"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1"/>
+                  <rect x="3" y="14" width="7" height="7" rx="1"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1"/>
+                </svg>
+              </div>
+              <div class="qa-card-title">Aplikasi Intelijen</div>
+              <div class="qa-card-sub">
+                Kelola Aplikasi
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="qa-card" data-page="peralatan">
+              <div class="qa-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <div class="qa-card-title">Peralatan Intelijen</div>
+              <div class="qa-card-sub">
+                Data & Inventaris
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="qa-card" data-page="pelaporan">
+              <div class="qa-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </div>
+              <div class="qa-card-title">Pelaporan Intelijen</div>
+              <div class="qa-card-sub">
+                Buat Laporan
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        </div><!-- /capaianContent -->
+
+      </section>
+      <!-- /PAGE CAPAIAN -->
+
+
+      <!-- ==================
+           PAGE: APLIKASI INTELIJEN
+           ================== -->
+      <section class="page" id="page-aplikasi">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          <h3>Aplikasi Intelijen</h3>
+          <p>Halaman ini menampilkan daftar aplikasi intelijen yang terdaftar dan aktif digunakan oleh Kejaksaan Negeri Muna.</p>
+        </div>
+      </section>
+
+
+      <!-- ==================
+           PAGE: PERALATAN
+           ================== -->
+      <section class="page" id="page-peralatan">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          <h3>Peralatan Intelijen</h3>
+          <p>Data inventaris dan peralatan intelijen Kejaksaan Negeri Muna akan ditampilkan di sini.</p>
+        </div>
+      </section>
+
+
+      <!-- ==================
+           PAGE: PELAPORAN
+           ================== -->
+      <section class="page" id="page-pelaporan">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          <h3>Pelaporan Intelijen</h3>
+          <p>Buat dan kelola laporan kegiatan intelijen Kejaksaan Negeri Muna secara terstruktur.</p>
+        </div>
+      </section>
+
+
+      <!-- ==================
+           PAGE: KALENDER
+           ================== -->
+      <section class="page" id="page-kalender">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <h3>Kalender Kegiatan</h3>
+          <p>Jadwal dan agenda kegiatan intelijen Kejaksaan Negeri Muna.</p>
+        </div>
+      </section>
+
+
+      <!-- ==================
+           PAGE: PENGATURAN
+           ================== -->
+      <section class="page" id="page-pengaturan">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+          <h3>Pengaturan Sistem</h3>
+          <p>Konfigurasi sistem dan preferensi pengguna dapat diatur di sini.</p>
+        </div>
+      </section>
+
+    </div>
+    <!-- /SCROLLABLE CONTENT -->
+
+  </div>
+  <!-- /MAIN AREA -->
+
+</div>
+<!-- /APP SHELL -->
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script>
+/* =====================
+   SESSION GUARD
+   ===================== */
+(function(){
+  const s = localStorage.getItem('intel_session');
+  if(!s){
+    window.location.href = 'index.html';
+    return;
+  }
+  try{
+    const d = JSON.parse(s);
+    const el = document.getElementById('userAv');
+    const nm = document.getElementById('userChipName');
+    const rl = document.getElementById('userChipRole');
+    if(d.username){
+      const initials = d.username.slice(0,2).toUpperCase();
+      if(el) el.textContent = initials;
+      if(nm) nm.textContent = d.username;
+      if(rl) rl.textContent = d.role || 'Intelijen';
+    }
+  }catch(e){}
+})();
+
+/* =====================
+   NAV ROUTING
+   ===================== */
+function navigate(pageKey){
+  document.querySelectorAll('.nav-item').forEach(n => {
+    n.classList.toggle('active', n.dataset.page === pageKey);
+  });
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.toggle('active', p.id === 'page-' + pageKey);
+  });
+}
+
+document.querySelectorAll('[data-page]').forEach(el => {
+  el.addEventListener('click', () => navigate(el.dataset.page));
+});
+
+/* =====================
+   LOGOUT
+   ===================== */
+document.getElementById('logoutBtn').addEventListener('click', function(e){
+  e.preventDefault();
+  localStorage.removeItem('intel_session');
+  window.location.href = 'index.html';
+});
+
+/* =====================
+   GOOGLE SHEETS — CAPAIAN KINERJA
+   Kolom: A=KEGIATAN, B=TARGET, C=TERLAKSANA
+   ===================== */
+const SHEET_ID    = '1MCpf11JdwMze8iGfX1FkLnB7vatgwzmVuwtX2mjEWiY';
+const SHEET_NAME  = 'CAPAIAN KINERJA';
+// CSV: pakai nama sheet (lebih reliabel daripada GID)
+const CSV_URL     = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_NAME)}`;
+// gviz JSON fallback
+const GVIZ_URL    = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+
+const COLORS = ['#0B3D2E','#2E9A6B','#B8902E','#4A90D9','#7C5CBF','#D94A4A','#4AC5C5','#C8A84B','#6B8F71','#C8C8C0'];
+
+let barChartInstance  = null;
+let donutChartInstance = null;
+
+/* --- Parse CSV teks → array objek --- */
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/);
+  if (lines.length < 2) return [];
+  // Baris pertama = header (KEGIATAN, TARGET, TERLAKSANA), skip
+  const data = [];
+  for (let i = 1; i < lines.length; i++) {
+    const cols = lines[i].split(',');
+    const kegiatan   = (cols[0] || '').replace(/"/g, '').trim();
+    const target     = parseFloat((cols[1] || '0').replace(/"/g, '').trim()) || 0;
+    const terlaksana = parseFloat((cols[2] || '0').replace(/"/g, '').trim()) || 0;
+    if (!kegiatan) continue;
+    data.push({ kegiatan, target, terlaksana });
+  }
+  return data;
+}
+
+/* --- Parse gviz JSON → array objek --- */
+function parseGviz(text) {
+  const clean = text.replace(/^[^(]+\(/, '').replace(/\);\s*$/, '');
+  const json  = JSON.parse(clean);
+  const rows  = (json.table && json.table.rows) ? json.table.rows : [];
+  const data  = [];
+  for (const row of rows) {
+    if (!row || !row.c) continue;
+    const c0 = row.c[0];
+    if (!c0 || c0.v === null || c0.v === undefined) continue;
+    const kegiatan   = String(c0.v).trim();
+    const target     = row.c[1] && row.c[1].v != null ? Number(row.c[1].v) || 0 : 0;
+    const terlaksana = row.c[2] && row.c[2].v != null ? Number(row.c[2].v) || 0 : 0;
+    if (!kegiatan) continue;
+    data.push({ kegiatan, target, terlaksana });
+  }
+  return data;
+}
+
+/* --- Fetch dengan timeout agar tidak nge-hang selamanya --- */
+function fetchWithTimeout(url, ms = 8000) {
+  const ctrl = new AbortController();
+  const tid  = setTimeout(() => ctrl.abort(), ms);
+  return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(tid));
+}
+
+/* --- Coba CSV dulu, kalau gagal fallback ke gviz --- */
+async function fetchSheetData() {
+  // Metode 1: CSV export (paling reliable, tidak kena CORS di browser modern)
+  try {
+    const res = await fetchWithTimeout(CSV_URL);
+    if (res.ok) {
+      const text = await res.text();
+      // Deteksi redirect ke halaman login Google (bukan CSV beneran)
+      if (!text.includes('<html') && !text.includes('<!DOCTYPE')) {
+        const data = parseCSV(text);
+        if (data.length > 0) return data;
+      }
+    }
+  } catch (e1) {
+    console.warn('CSV fetch gagal, coba gviz:', e1.message);
+  }
+
+  // Metode 2: gviz/tq JSON (fallback)
+  const res2 = await fetchWithTimeout(GVIZ_URL);
+  if (!res2.ok) throw new Error('HTTP ' + res2.status);
+  const text2 = await res2.text();
+  const data2 = parseGviz(text2);
+  if (data2.length === 0) throw new Error('Data kosong dari kedua sumber');
+  return data2;
+}
+
+function renderDashboard(data) {
+  const totalTarget     = data.reduce((s, r) => s + r.target, 0);
+  const totalTerlaksana = data.reduce((s, r) => s + r.terlaksana, 0);
+  const persen          = totalTarget > 0 ? Math.round((totalTerlaksana / totalTarget) * 100) : 0;
+  const jenisKegiatan   = data.length;
+
+  // --- Hero Banner ---
+  document.getElementById('statCapaian').textContent        = persen + '%';
+  document.getElementById('statTotalTarget').textContent    = totalTarget;
+  document.getElementById('statTotalTerlaksana').textContent = totalTerlaksana;
+
+  // --- KPI Cards ---
+  document.getElementById('kpiJenisKegiatan').textContent   = jenisKegiatan;
+  document.getElementById('kpiJenisKegiatanSub').textContent = jenisKegiatan + ' jenis kegiatan aktif';
+  document.getElementById('kpiTotalTarget').textContent     = totalTarget;
+  document.getElementById('kpiTotalTerlaksana').textContent = totalTerlaksana;
+
+  const overDelta = document.getElementById('kpiTerlaksanaDelta');
+  const over = totalTerlaksana - totalTarget;
+  if (over > 0) {
+    overDelta.textContent = '▲ ' + over + ' melebihi target';
+    overDelta.style.color = '#2E9A6B';
+  } else if (over < 0) {
+    overDelta.textContent = '▼ ' + Math.abs(over) + ' di bawah target';
+    overDelta.style.color = '#D94A4A';
+  } else {
+    overDelta.textContent = 'Tepat sesuai target';
+    overDelta.style.color = '#B8902E';
+  }
+
+  document.getElementById('kpiPersenCapaian').textContent   = persen + '%';
+  const capDelta = document.getElementById('kpiCapaianDelta');
+  capDelta.textContent = persen >= 100 ? '✓ Target tercapai' : (persen + '% dari total target');
+  capDelta.style.color = persen >= 100 ? '#2E9A6B' : (persen >= 70 ? '#B8902E' : '#D94A4A');
+
+  // --- Timestamp tag ---
+  const now = new Date();
+  document.getElementById('lastUpdatedTag').textContent =
+    'Update: ' + now.toLocaleString('id-ID', {day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+
+  // --- Bar Chart ---
+  const barCtx = document.getElementById('barChart');
+  if (barCtx) {
+    if (barChartInstance) barChartInstance.destroy();
+    barChartInstance = new Chart(barCtx, {
+      type: 'bar',
+      data: {
+        labels: data.map(r => r.kegiatan),
+        datasets: [
+          {
+            label: 'Target',
+            data: data.map(r => r.target),
+            backgroundColor: 'rgba(11,61,46,0.15)',
+            borderColor: '#0B3D2E',
+            borderWidth: 1.5,
+            borderRadius: 4,
+          },
+          {
+            label: 'Terlaksana',
+            data: data.map(r => r.terlaksana),
+            backgroundColor: data.map(r => r.terlaksana >= r.target ? '#2E9A6B' : '#B8902E'),
+            borderColor: 'transparent',
+            borderRadius: 4,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            labels: { font: { size: 11 }, color: '#4a5568', boxWidth: 12, padding: 14 }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(11,61,46,0.92)',
+            padding: 10,
+            cornerRadius: 8,
+            callbacks: {
+              label: ctx => ' ' + ctx.dataset.label + ': ' + ctx.parsed.y
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { font: { size: 11 }, color: '#8a9490', stepSize: 1 },
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            border: { display: false }
+          },
+          x: {
+            ticks: {
+              font: { size: 10 },
+              color: '#8a9490',
+              maxRotation: 30,
+              callback: function(val, i) {
+                const label = data[i].kegiatan;
+                return label.length > 14 ? label.slice(0, 13) + '…' : label;
+              }
+            },
+            grid: { display: false },
+            border: { display: false }
+          }
+        }
+      }
+    });
+  }
+
+  // --- Chart Summary (bawah bar chart) ---
+  const summaryEl = document.getElementById('chartSummary');
+  if (summaryEl) {
+    const tercapai  = data.filter(r => r.terlaksana >= r.target).length;
+    const belum     = data.filter(r => r.terlaksana < r.target).length;
+    summaryEl.innerHTML = `
+      <div class="cs-item">
+        <div class="cs-label">Kegiatan Tercapai</div>
+        <div class="cs-val">${tercapai} <span class="cs-arrow" style="color:#2E9A6B;">✓</span></div>
+      </div>
+      <div class="cs-item">
+        <div class="cs-label">Belum Tercapai</div>
+        <div class="cs-val">${belum} <span class="cs-arrow" style="color:#D94A4A;">!</span></div>
+      </div>
+      <div class="cs-item">
+        <div class="cs-label">Persentase</div>
+        <div class="cs-val">${persen}% <span class="cs-arrow">↗</span></div>
+      </div>
+    `;
+  }
+
+  // --- Donut Chart ---
+  document.getElementById('donutTotalTag').textContent = 'Total ' + totalTerlaksana;
+  document.getElementById('donutCenterNum').textContent = totalTerlaksana;
+
+  const donutCtx = document.getElementById('donutChart');
+  if (donutCtx) {
+    if (donutChartInstance) donutChartInstance.destroy();
+    donutChartInstance = new Chart(donutCtx, {
+      type: 'doughnut',
+      data: {
+        labels: data.map(r => r.kegiatan),
+        datasets: [{
+          data: data.map(r => r.terlaksana),
+          backgroundColor: COLORS.slice(0, data.length),
+          borderWidth: 2.5,
+          borderColor: '#fff',
+          hoverOffset: 5
+        }]
+      },
+      options: {
+        responsive: false,
+        cutout: '68%',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(11,61,46,0.92)',
+            padding: 10,
+            cornerRadius: 8,
+            callbacks: {
+              label: ctx => ' ' + ctx.label + ': ' + ctx.parsed + ' kegiatan'
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // --- Donut Legend ---
+  const legendEl = document.getElementById('donutLegend');
+  if (legendEl) {
+    legendEl.innerHTML = data.map((r, i) => {
+      const pct = totalTerlaksana > 0 ? Math.round((r.terlaksana / totalTerlaksana) * 100) : 0;
+      return `
+        <div class="dl-item">
+          <div class="dl-dot" style="background:${COLORS[i % COLORS.length]};"></div>
+          <span class="dl-label">${r.kegiatan}</span>
+          <span class="dl-val">${pct}%</span>
+        </div>`;
+    }).join('');
+  }
+
+  // --- Tabel Rincian ---
+  const tabelEl = document.getElementById('tabelKegiatan');
+  if (tabelEl) {
+    tabelEl.innerHTML = `
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(11,61,46,0.12);">
+            <th style="text-align:left;padding:8px 10px;color:#4a5568;font-weight:600;">Kegiatan</th>
+            <th style="text-align:center;padding:8px 10px;color:#4a5568;font-weight:600;">Target</th>
+            <th style="text-align:center;padding:8px 10px;color:#4a5568;font-weight:600;">Terlaksana</th>
+            <th style="text-align:center;padding:8px 10px;color:#4a5568;font-weight:600;">Capaian</th>
+            <th style="text-align:left;padding:8px 10px;color:#4a5568;font-weight:600;">Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data.map(r => {
+            const p = r.target > 0 ? Math.min(Math.round((r.terlaksana / r.target) * 100), 100) : 0;
+            const actual = r.target > 0 ? Math.round((r.terlaksana / r.target) * 100) : 0;
+            const barColor = actual >= 100 ? '#2E9A6B' : (actual >= 60 ? '#B8902E' : '#D94A4A');
+            const badgeStyle = `background:${barColor}20;color:${barColor};padding:2px 8px;border-radius:20px;font-weight:600;font-size:12px;`;
+            return `
+              <tr style="border-bottom:1px solid rgba(0,0,0,0.05);transition:background .15s;" 
+                  onmouseover="this.style.background='rgba(11,61,46,0.03)'" 
+                  onmouseout="this.style.background=''">
+                <td style="padding:9px 10px;color:#1a2e22;font-weight:500;">${r.kegiatan}</td>
+                <td style="text-align:center;padding:9px 10px;color:#4a5568;">${r.target}</td>
+                <td style="text-align:center;padding:9px 10px;color:#4a5568;">${r.terlaksana}</td>
+                <td style="text-align:center;padding:9px 10px;">
+                  <span style="${badgeStyle}">${actual}%</span>
+                </td>
+                <td style="padding:9px 10px;min-width:100px;">
+                  <div style="background:rgba(0,0,0,0.07);border-radius:20px;height:6px;overflow:hidden;">
+                    <div style="background:${barColor};width:${p}%;height:100%;border-radius:20px;transition:width .5s;"></div>
+                  </div>
+                </td>
+              </tr>`;
+          }).join('')}
+        </tbody>
+        <tfoot>
+          <tr style="border-top:2px solid rgba(11,61,46,0.12);background:rgba(11,61,46,0.03);">
+            <td style="padding:9px 10px;font-weight:700;color:#0B3D2E;">TOTAL</td>
+            <td style="text-align:center;padding:9px 10px;font-weight:700;color:#0B3D2E;">${totalTarget}</td>
+            <td style="text-align:center;padding:9px 10px;font-weight:700;color:#0B3D2E;">${totalTerlaksana}</td>
+            <td style="text-align:center;padding:9px 10px;">
+              <span style="background:${persen>=100?'#2E9A6B':persen>=60?'#B8902E':'#D94A4A'}20;color:${persen>=100?'#2E9A6B':persen>=60?'#B8902E':'#D94A4A'};padding:2px 8px;border-radius:20px;font-weight:700;font-size:12px;">${persen}%</span>
+            </td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>`;
+  }
+
+  // Tampilkan konten, sembunyikan loading
+  document.getElementById('capaianLoading').style.display = 'none';
+  document.getElementById('capaianContent').style.display = 'block';
+}
+
+function showError(msg) {
+  const loading = document.getElementById('capaianLoading');
+  if (!loading) return;
+  loading.style.display = 'flex';
+  loading.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="#D94A4A" stroke-width="2" width="40" height="40" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>
+    <div style="color:#D94A4A;font-size:13px;text-align:center;max-width:320px;line-height:1.6;">${msg}</div>
+    <div style="display:flex;gap:10px;margin-top:4px;">
+      <button onclick="loadCapaianData()" style="padding:8px 18px;background:#0B3D2E;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:13px;">↻ Coba Lagi</button>
+      <a href="https://docs.google.com/spreadsheets/d/1MCpf11JdwMze8iGfX1FkLnB7vatgwzmVuwtX2mjEWiY/edit" target="_blank"
+         style="padding:8px 18px;background:transparent;color:#0B3D2E;border:1.5px solid #0B3D2E;border-radius:8px;cursor:pointer;font-size:13px;text-decoration:none;">
+         Buka Sheet ↗
+      </a>
+    </div>
+    <div style="color:#aaa;font-size:11px;margin-top:6px;">Pastikan sheet diatur: <b>Bagikan → Anyone with the link → Viewer</b></div>
+  `;
+}
+
+async function loadCapaianData() {
+  const loading = document.getElementById('capaianLoading');
+  const content = document.getElementById('capaianContent');
+
+  // Reset ke spinner
+  if (loading) {
+    loading.style.display = 'flex';
+    loading.innerHTML = `
+      <div style="width:36px;height:36px;border:3px solid rgba(11,61,46,0.15);border-top-color:#0B3D2E;border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+      <div style="color:#8a9490;font-size:13px;">Memuat data dari Google Sheets...</div>
+    `;
+  }
+  if (content) content.style.display = 'none';
+
+  try {
+    const data = await fetchSheetData();
+    if (!data || data.length === 0) {
+      showError('Data tidak ditemukan di sheet.<br>Pastikan sheet <b>CAPAIAN KINERJA</b> memiliki data di kolom A, B, C dan sudah dibagikan ke publik.');
+      return;
+    }
+    renderDashboard(data);
+  } catch (err) {
+    console.error('Gagal memuat data:', err);
+    showError(`Gagal memuat data dari Google Sheets.<br><small style="opacity:.8;">${err.message}</small>`);
+  }
+}
+
+// Jalankan saat halaman load
+loadCapaianData();
+
+// Auto-refresh setiap 5 menit
+setInterval(() => {
+  const content = document.getElementById('capaianContent');
+  if (content && content.style.display !== 'none') {
+    loadCapaianData();
+  }
+}, 5 * 60 * 1000);
+</script>
+
+</body>
+</html>
